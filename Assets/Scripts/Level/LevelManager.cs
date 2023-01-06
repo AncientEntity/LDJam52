@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < Random.Range(2,5); i++)
         {
-            GameObject body = Instantiate(bodyPrefabs[Random.Range(0,solarBodies.Count-1)], bodyParent.position, Quaternion.identity);
+            GameObject body = Instantiate(bodyPrefabs[Random.Range(0,solarBodies.Count)], bodyParent.position, Quaternion.identity);
             body.transform.SetParent(bodyParent);
             SpaceBody spaceBody = body.GetComponent<SpaceBody>();
             spaceBody.Init((i + 1.5f));
