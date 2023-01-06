@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0f41034e057148248be8987138b89ac4
+  - enabled: 1
+    path: Assets/Scenes/SpaceStation.unity
+    guid: 0c9eade9b2b78794ebcb6766e0503fe6
   m_configObjects: {}
