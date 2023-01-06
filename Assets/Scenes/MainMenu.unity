@@ -184,8 +184,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 60085f287aa4b4d108c8b65d7b1cc1c0, type: 2}
+  m_sharedMaterial: {fileID: 2494348308811935307, guid: 60085f287aa4b4d108c8b65d7b1cc1c0,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -459,8 +460,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 365.6714, y: 110}
+  m_AnchoredPosition: {x: 0, y: 134.0927}
+  m_SizeDelta: {x: 407.0303, y: 141.8145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863110666
 MonoBehaviour:
@@ -484,8 +485,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Jeff Bezos goes to space
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 60085f287aa4b4d108c8b65d7b1cc1c0, type: 2}
+  m_sharedMaterial: {fileID: 2494348308811935307, guid: 60085f287aa4b4d108c8b65d7b1cc1c0,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -509,8 +511,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -686,8 +688,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 60085f287aa4b4d108c8b65d7b1cc1c0, type: 2}
+  m_sharedMaterial: {fileID: 2494348308811935307, guid: 60085f287aa4b4d108c8b65d7b1cc1c0,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
