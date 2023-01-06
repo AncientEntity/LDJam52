@@ -47,7 +47,21 @@ MonoBehaviour:
   actualBody: {fileID: 1512728908691231416}
   pivot: {fileID: 3552908258212095554}
   isGasGiant: 0
+  randomColor: 0
   sR: {fileID: 4762850357096716492}
+  possibleSprites:
+  - {fileID: 21300000, guid: 392fa65e2a9f96a4e8d7c470d12a0e85, type: 3}
+  - {fileID: 21300000, guid: e9d132629f1d7dc4aad5d41548878b60, type: 3}
+  - {fileID: 21300000, guid: 4a0b114a6eb2f29459cd058283788e31, type: 3}
+  - {fileID: 21300000, guid: 2a1acc61eab94414c874d38ed9886ca0, type: 3}
+  - {fileID: 21300000, guid: 17ad8411d9521d644aea7f391c9a7fb9, type: 3}
+  - {fileID: 21300000, guid: ed7c93f351ba86b4eb8cf4501f40fc54, type: 3}
+  - {fileID: 21300000, guid: cedf7a5fc424cc84e85b9397dd16d9c8, type: 3}
+  - {fileID: 21300000, guid: 7b6172df001c23647bb69c571ec8775e, type: 3}
+  - {fileID: 21300000, guid: 3095bc381f85e7c44913f66111275c7c, type: 3}
+  - {fileID: 21300000, guid: 27257d2f2672f184caadcfce68738f8d, type: 3}
+  - {fileID: 21300000, guid: 15cded6e49eecb3458afa4b6ee971d85, type: 3}
+  - {fileID: 21300000, guid: 195d136ce46ecc64e8be5321afdb0aa5, type: 3}
 --- !u!1 &1209360053261912314
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +135,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -1169508684643304836, guid: 69090f2b9d4380941a2bb841b094b3af,
     type: 3}
-  m_Color: {r: 0.25866985, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
