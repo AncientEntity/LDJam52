@@ -19,12 +19,14 @@ public class RadialSelection : MonoBehaviour
     public Color hoverColor = new Color(0.25f, 0.25f, 0.25f);
     public Color pressColor = new Color(0.5f, 0.5f, 0.5f);
     public Sprite defaultSprite;
+    public string[] segmentNames;
     [Space]
     public GameObject optionParent;
     public GameObject regularTransform;
     public RadialPressedEvent onClick = new RadialPressedEvent();
     [Space]
     public TMPro.TextMeshProUGUI titleText;
+    public TMPro.TextMeshProUGUI toolTipText;
 
     private int lastSegmentIndex = -1;
     private bool active = false;
@@ -34,6 +36,7 @@ public class RadialSelection : MonoBehaviour
     private List<Image> iconRenderers = new List<Image>();
 
     private Transform center;
+    private Canvas canvas;
 
     private void Awake()
     {
@@ -89,6 +92,13 @@ public class RadialSelection : MonoBehaviour
         {
 
             int segmentIndex = DetermineSegment(mousePos);
+
+            toolTipText.text = segmentNames[segmentIndex];
+            toolTipText.enabled = true;
+            toolTipText.transform.position = GUIUtility.ScreenToGUIPoint(Input.mousePosition);//Camera.main.ScreenToViewportPoint();
+            //Vector2 toolTipPos;
+            //RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform,Input.mousePosition,Camera.main,out toolTipPos);
+            //toolTipText.transform.position = toolTipPos;
 
             bool leftClickDown = Input.GetMouseButtonDown(0);
             bool leftClickActive = Input.GetMouseButton(0);
@@ -146,6 +156,7 @@ public class RadialSelection : MonoBehaviour
         }
         //optionParent.SetActive(active);
         wheelAnim = optionParent.GetComponent<Animator>();
+        canvas = FindObjectOfType<Canvas>();
     }
 
     public void SetSegmentSprite(int index, Sprite s)
