@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 840986761713095195}
   - component: {fileID: 840986761713095194}
   - component: {fileID: 203668204910855169}
+  - component: {fileID: -7823497741695207725}
   m_Layer: 0
   m_Name: Star
   m_TagString: Untagged
@@ -95,5 +96,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3c5aa3e681988498143f053e1dfcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyName: Unnamed Celestial Body
+  collisionRadius: 0.85
   actualBody: {fileID: 840986761713095195}
   pivot: {fileID: 0}
+  sR: {fileID: 840986761713095194}
+--- !u!58 &-7823497741695207725
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840986761713095172}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.44666666

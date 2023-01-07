@@ -6,8 +6,9 @@ public class Planet : SpaceBody
 {
     public bool isGasGiant = false;
     public bool randomColor = false;
-    public SpriteRenderer sR;
     public Sprite[] possibleSprites;
+
+    private int spriteIndex = -1;
 
     private void Start()
     {
@@ -18,7 +19,18 @@ public class Planet : SpaceBody
         }
             if(isGasGiant) { c.a = 0.8f; }
         sR.color = c;
-        sR.sprite = possibleSprites[Random.Range(0, possibleSprites.Length)];
+        spriteIndex = Random.Range(0, possibleSprites.Length);
+        sR.sprite = possibleSprites[spriteIndex];
+    }
+
+    public override void OnHover()
+    {
+        base.OnHover();
+    }
+
+    public override void OnUnHover()
+    {
+        base.OnUnHover();
     }
 
 }
