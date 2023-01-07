@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     public RadialSelection selectionRadial;
     [Space]
     private List<SpaceBody> solarBodies = new List<SpaceBody>();
+    private List<PlayerBuild> playerBuilds { get { return PlayerBuild.all; } }
 
     private bool isInit = false;
     private Vector2 lastMousePosition = Vector2.zero;
@@ -75,7 +76,10 @@ public class LevelManager : MonoBehaviour
         Vector2 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if(currentMousePosition == lastMousePosition) { return; }
 
-        foreach(SpaceBody body in solarBodies)
+        bool leftClick = Input.GetMouseButtonDown(0);
+        bool rightClick = Input.GetMouseButtonDown(1);
+
+        foreach (SpaceBody body in solarBodies)
         {
             if(currentlyPressed != null && currentlyPressed != body) { continue; }
 
@@ -86,7 +90,7 @@ public class LevelManager : MonoBehaviour
                 {
                     body.OnHover();
                 }
-                if(Input.GetMouseButtonDown(0)) { currentlyPressed = body;  body.OnPress(); }
+                if(leftClick) { currentlyPressed = body;  body.OnPress(); }
             }
             if((body.isPressed && dis > body.collisionRadius*5f) || ((!body.isPressed && dis > body.collisionRadius))) {
                 if (body.isHovering)
@@ -100,8 +104,67 @@ public class LevelManager : MonoBehaviour
                 }
             }
         }
+        if (leftClick)
+        {
+            bool anyShips = false;
+            foreach (PlayerBuild build in playerBuilds.ToArray())
+            {
+                if (build == null) { playerBuilds.Remove(build); continue; }
+
+                float dis = Vector2.Distance(build.transform.position, currentMousePosition);
+                if (dis <= build.collisionRadius)
+                {
+                    build.SetSelected(!build.isSelected);
+                    anyShips = true;
+                }
+
+            }
+            if (!anyShips)
+            {
+                foreach (PlayerBuild build in playerBuilds)
+                {
+                    if (build.isSelected)
+                    {
+                        build.SetSelected(false);
+                    }
+                }
+            }
+        }
+
+        if(rightClick && PlayerBuild.selectedBuilds.Count > 0)
+        {
+            SpaceBody hovering = CheckSpaceBodyHover();
+            if(hovering == null)
+            {
+                foreach(PlayerBuild select in PlayerBuild.selectedBuilds)
+                {
+                    select.DoMove(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                }
+            } else
+            {
+                //If planet, if trade station, etc.
+            }
+        }
 
     }
 
+
+    public SpaceBody CheckSpaceBodyHover()
+    {
+
+        Vector2 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        foreach (SpaceBody body in solarBodies)
+        {
+            if (currentlyPressed != null && currentlyPressed != body) { continue; }
+
+            float dis = Vector2.Distance(body.actualBody.position, currentMousePosition);
+            if (dis <= body.collisionRadius)
+            {
+                return body;
+            }
+        }
+        return null;
+    }
 
 }
