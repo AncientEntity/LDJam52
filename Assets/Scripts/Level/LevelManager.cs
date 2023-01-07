@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
 
     private bool isInit = false;
     private Vector2 lastMousePosition = Vector2.zero;
+    private SpaceBody currentlyPressed = null;
 
     private void Awake()
     {
@@ -76,6 +77,8 @@ public class LevelManager : MonoBehaviour
 
         foreach(SpaceBody body in solarBodies)
         {
+            if(currentlyPressed != null && currentlyPressed != body) { continue; }
+
             float dis = Vector2.Distance(body.actualBody.position, currentMousePosition);
             if (dis <= body.collisionRadius)
             {
@@ -83,7 +86,7 @@ public class LevelManager : MonoBehaviour
                 {
                     body.OnHover();
                 }
-                if(Input.GetMouseButtonDown(0)) { body.OnPress(); }
+                if(Input.GetMouseButtonDown(0)) { currentlyPressed = body;  body.OnPress(); }
             }
             if((body.isPressed && dis > body.collisionRadius*5f) || ((!body.isPressed && dis > body.collisionRadius))) {
                 if (body.isHovering)
@@ -93,6 +96,7 @@ public class LevelManager : MonoBehaviour
                 if(body.isPressed)
                 {
                     body.OnRelease();
+                    currentlyPressed = null;
                 }
             }
         }
