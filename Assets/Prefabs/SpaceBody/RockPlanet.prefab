@@ -49,9 +49,11 @@ MonoBehaviour:
   collisionRadius: 0.6
   actualBody: {fileID: 1512728908691231416}
   pivot: {fileID: 3552908258212095554}
+  sR: {fileID: 4762850357096716492}
+  resourcePurity: 1
+  drillCount: 0
   isGasGiant: 0
   randomColor: 0
-  sR: {fileID: 4762850357096716492}
   possibleSprites:
   - {fileID: 21300000, guid: dab831ba35246174f8d3851b78357368, type: 3}
   - {fileID: 21300000, guid: ace273cc267e39242a32a5f96cc1a631, type: 3}
@@ -63,6 +65,28 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 533b1e52770ae1d45a3f5f9377bb7008, type: 3}
   - {fileID: 21300000, guid: a46424d398a1e39458d2d4e1c368b4ff, type: 3}
   - {fileID: 21300000, guid: f15df19742befbc439c5f431d5559553, type: 3}
+  possibleDescriptions:
+  - A rocky planet with no signs of life, likely due to its harsh surface conditions
+    and lack of water.
+  - A rocky, inhospitable planet with no evidence of life, possibly due to its distance
+    from its star or the lack of a protective atmosphere.
+  - A barren rocky planet lacking the necessary conditions for life to thrive.
+  - A rocky world with a hostile surface environment, incapable of supporting life.
+  - A desolate rocky planet, void of any known forms of life.
+  - A lifeless rocky planet, likely due to its extreme temperature fluctuations or
+    lack of water.
+  - A rocky planet that has yet to exhibit any signs of life, possibly due to its
+    young age or distant location from its star.
+  - 'A rocky world with complex, interdependent life forms that have evolved over
+    time to survive in its unique environment.   '
+  - 'A rocky planet with a thriving ecosystem, featuring complex interactions between
+    different life forms. '
+  - 'A rocky planet that is home to a wide range of living organisms, adapted to
+    its unique surface conditions. '
+  - 'A rocky world teeming with life, thanks to its favorable conditions such as
+    the presence of water and a protective atmosphere. '
+  - 'A rocky planet with a diverse array of life forms, possibly due to its stable
+    climate and abundant resources. '
 --- !u!58 &8328746920471413549
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class RadialSelection : MonoBehaviour
     public Color pressColor = new Color(0.5f, 0.5f, 0.5f);
     public Sprite defaultSprite;
     public string[] segmentNames;
+    public GameObject[] segmentSubmenus;
     [Space]
     public GameObject optionParent;
     public GameObject regularTransform;
@@ -38,6 +39,9 @@ public class RadialSelection : MonoBehaviour
     private Transform center;
     private Canvas canvas;
 
+    private bool goneUp = false;
+    private SpaceBody curBody;
+
     private void Awake()
     {
         Init();
@@ -48,9 +52,14 @@ public class RadialSelection : MonoBehaviour
     private void Update()
     {
         Toggle();
-        if (active)
+        if(Input.GetMouseButtonUp(0))
+        {
+            goneUp = true;
+        }
+        if (active && goneUp)
         {
             Radial();
+            curBody.UpdateRadialStats();
         }
     }
 
@@ -58,7 +67,7 @@ public class RadialSelection : MonoBehaviour
     {
         if (Input.GetKeyDown(openKey))
         {
-            ForceOpen(null);
+            ForceOpen(null,null);
         }
         else if (Input.GetKeyUp(openKey))
         {
@@ -66,8 +75,10 @@ public class RadialSelection : MonoBehaviour
         }
     }
 
-    public void ForceOpen(Transform center)
+    public void ForceOpen(Transform center, SpaceBody b)
     {
+        goneUp = false;
+        curBody = b;
         this.center = center;
         OpenRadial();
         radialCount++;
@@ -110,6 +121,10 @@ public class RadialSelection : MonoBehaviour
                 if (leftClickDown)
                 {
                     onClick.Invoke(segmentIndex);
+                    if(segmentSubmenus[segmentIndex] != null)
+                    {
+                        segmentSubmenus[segmentIndex].SetActive(true);
+                    }
                 }
             }
             else
@@ -188,6 +203,12 @@ public class RadialSelection : MonoBehaviour
         if (!active) { return; }
         active = false;
         wheelAnim.SetBool("DoOpen", false);
+
+        foreach(GameObject sub in segmentSubmenus)
+        {
+            if(sub == null) { continue; }
+            sub.SetActive(false);
+        }
         
     }
 
@@ -198,7 +219,6 @@ public class RadialSelection : MonoBehaviour
             CloseRadial();
         }
     }
-
 
 
     [System.Serializable]

@@ -177,9 +177,11 @@ MonoBehaviour:
   collisionRadius: 0.6
   actualBody: {fileID: 2522172503904021140}
   pivot: {fileID: 482082344681676398}
+  sR: {fileID: 8495987096989868256}
+  resourcePurity: 1
+  drillCount: 0
   isGasGiant: 1
   randomColor: 0
-  sR: {fileID: 8495987096989868256}
   possibleSprites:
   - {fileID: 21300000, guid: 1873674ba991e04419319f594d8bd96e, type: 3}
   - {fileID: 21300000, guid: 8dddc8eddc966734caac232288e01720, type: 3}
@@ -188,6 +190,26 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8d749816b36cad94397bfbddc65dc00f, type: 3}
   - {fileID: 21300000, guid: da50eca73e25f064d987c7f15f33b580, type: 3}
   - {fileID: 21300000, guid: e686e471c53114f46aa1517f1d7341c3, type: 3}
+  possibleDescriptions:
+  - A massive gas giant with no signs of life, likely due to its extreme temperatures
+    and high pressure.
+  - 'A giant ball of gas and gas alone, inhospitable to any known form of life. '
+  - 'A giant planet made up almost entirely of gas, with no surface for life to exist
+    on. '
+  - 'A lifeless gas giant, incapable of supporting life due to its lack of solid
+    surface and extreme conditions. '
+  - 'A gas giant with no evidence of life, likely due to its intense radiation and
+    lack of a stable surface.   '
+  - A gas giant teeming with unique, floating life forms adapted to survive in its
+    turbulent atmosphere.
+  - 'A massive planet with a diverse array of life forms living within its gas layers,
+    possibly sustained by energy from its core. '
+  - 'A gas giant with a complex ecosystem of life forms that have evolved to thrive
+    in its extreme environment. '
+  - 'A giant planet with a range of unusual, gas-based life forms, adapted to survive
+    in its high pressure atmosphere. '
+  - 'A gas giant that is home to a variety of strange and exotic life forms, adapted
+    to its unique conditions.   '
 --- !u!58 &-4136614892248072741
 CircleCollider2D:
   m_ObjectHideFlags: 0

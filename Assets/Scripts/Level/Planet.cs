@@ -7,6 +7,7 @@ public class Planet : SpaceBody
     public bool isGasGiant = false;
     public bool randomColor = false;
     public Sprite[] possibleSprites;
+    public string[] possibleDescriptions;
 
     private int spriteIndex = -1;
 
@@ -21,6 +22,7 @@ public class Planet : SpaceBody
         sR.color = c;
         spriteIndex = Random.Range(0, possibleSprites.Length);
         sR.sprite = possibleSprites[spriteIndex];
+        desc = possibleDescriptions[Random.Range(0, possibleDescriptions.Length)];
     }
 
     public override void OnHover()

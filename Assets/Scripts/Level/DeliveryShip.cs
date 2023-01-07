@@ -35,8 +35,11 @@ public class DeliveryShip : PlayerBuild
         {
             transform.SetParent(targetPlanet.actualBody);
             //At planet to retrieve
-            SetResources(resourceCount + targetPlanet.resourcePurity * targetPlanet.drillCount * Time.deltaTime);
-            Debug.Log(resourceCount);
+            if (targetPlanet.currentResources <= 0) { targetPlanet = null;transform.SetParent(null); }
+            float oresTaken = Mathf.Clamp(targetPlanet.resourcePurity * targetPlanet.drillCount * Time.deltaTime,0f,targetPlanet.currentResources);
+            targetPlanet.currentResources -= oresTaken;
+            SetResources(resourceCount + oresTaken);
+
             if(resourceCount >= maxResources)
             {
                 resourceCount = maxResources;
