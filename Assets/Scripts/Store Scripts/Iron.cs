@@ -8,7 +8,7 @@ public class Iron : MonoBehaviour
     public Text Sell_all;
     public Text Sell;
     int iron = 0;
-    public int cost = 100;
+    public static int cost = 100;
 
     void Update()
     {

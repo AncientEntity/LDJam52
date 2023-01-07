@@ -11,7 +11,6 @@ public class StoreManager : MonoBehaviour
 
     public void BuyDrill(){
         bool buy = GameManager.instance.BuyDrill(Drill.cost);
-
         if(buy){
             Drill.cost = Drill.cost * Drill_Modifier;
             //Change ui to bought
@@ -23,15 +22,8 @@ public class StoreManager : MonoBehaviour
         return;
     }
 
-
-    public void SellIron_A(int cost){
-        SellIron(cost, true);
-    }
-    public void SellIron_1(int cost){
-        SellIron(cost, false);
-    }
-    public void SellIron(int cost, bool all){
-        bool sell = GameManager.instance.SellIron(cost, all);
+    public void SellIron(bool all){
+        bool sell = GameManager.instance.SellIron(Iron.cost , all);
         if(sell == true){
             print("selling was successful");
         }else{
