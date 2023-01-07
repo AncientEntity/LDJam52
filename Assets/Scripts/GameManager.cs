@@ -9,11 +9,14 @@ public class GameManager : MonoBehaviour
     public static int money = 100000;
 
     //Item levels
-    public static int drill_level = 0;
-    public static int drill_speed = 0;
-    public static int drill_bit   = 0;
-    public static int drill_eff   = 0;
+    public static int drill_level = 1;
+    public static int drill_speed = 1;
+    public static int drill_bit   = 1;
+    public static int drill_eff   = 1;
 
+    //Ship shit
+    public static int ship_storage = 1;
+    public static int ship_speed = 1;
 
     //Materials
     public static int iron = 100;
@@ -33,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     public void AddMoney(int i){GameManager.money += i;}
 
-    public bool HasMoney(int cost){
+    public static bool HasMoney(int cost){
         if(money >= cost){
             return true;
         }
