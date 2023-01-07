@@ -85,7 +85,7 @@ public class LevelManager : MonoBehaviour
                 }
                 if(Input.GetMouseButtonDown(0)) { body.OnPress(); }
             }
-            if(dis > body.collisionRadius*4f) {
+            if((body.isPressed && dis > body.collisionRadius*5f) || ((!body.isPressed && dis > body.collisionRadius))) {
                 if (body.isHovering)
                 {
                     body.OnUnHover();

@@ -21,6 +21,7 @@ public class RadialSelection : MonoBehaviour
     public Sprite defaultSprite;
     [Space]
     public GameObject optionParent;
+    public GameObject regularTransform;
     public RadialPressedEvent onClick = new RadialPressedEvent();
     [Space]
     public TMPro.TextMeshProUGUI titleText;
@@ -31,6 +32,8 @@ public class RadialSelection : MonoBehaviour
 
     private List<Image> segmentRenderers = new List<Image>();
     private List<Image> iconRenderers = new List<Image>();
+
+    private Transform center;
 
     private void Awake()
     {
@@ -52,7 +55,7 @@ public class RadialSelection : MonoBehaviour
     {
         if (Input.GetKeyDown(openKey))
         {
-            ForceOpen();
+            ForceOpen(null);
         }
         else if (Input.GetKeyUp(openKey))
         {
@@ -60,8 +63,9 @@ public class RadialSelection : MonoBehaviour
         }
     }
 
-    public void ForceOpen()
+    public void ForceOpen(Transform center)
     {
+        this.center = center;
         OpenRadial();
         radialCount++;
     }
@@ -83,6 +87,7 @@ public class RadialSelection : MonoBehaviour
 
         if (InsideRadial(mousePos))
         {
+
             int segmentIndex = DetermineSegment(mousePos);
 
             bool leftClickDown = Input.GetMouseButtonDown(0);
@@ -110,12 +115,22 @@ public class RadialSelection : MonoBehaviour
 
     private bool InsideRadial(Vector2 mousePosition)
     {
-        return Mathf.Sqrt(mousePosition.x * mousePosition.x + mousePosition.y * mousePosition.y) < radiusPercent * Screen.width;
+        //Vector2 screenPositionOption = Camera.main.WorldToScreenPoint(regularTransform.transform.position);
+
+        float xPos = mousePosition.x - center.transform.position.x;//screenPositionOption.x;
+        float yPos = mousePosition.y - center.transform.position.y; //screenPositionOption.y;
+
+        return Mathf.Sqrt(xPos* xPos + yPos * yPos) < radiusPercent * Screen.width;
     }
 
     private int DetermineSegment(Vector2 mousePosition)
     {
-        float angleDegrees = Mathf.Rad2Deg * Mathf.Atan2(mousePosition.y, mousePosition.x) + degreeOffset;
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        float xPos = mousePosition.x - center.transform.position.x;
+        float yPos = mousePosition.y - center.transform.position.y; 
+
+        float angleDegrees = Mathf.Rad2Deg * Mathf.Atan2(yPos, xPos) + degreeOffset;
         if (angleDegrees < 0) { angleDegrees = 360f + angleDegrees; }
         //Debug.Log(angleDegrees);
         return (int)(angleDegrees / 360f * segmentCount);

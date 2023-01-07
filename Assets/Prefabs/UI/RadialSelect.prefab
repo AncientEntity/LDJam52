@@ -67,8 +67,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Alphabetrium 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 60085f287aa4b4d108c8b65d7b1cc1c0, type: 2}
+  m_sharedMaterial: {fileID: 2494348308811935307, guid: 60085f287aa4b4d108c8b65d7b1cc1c0,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -92,10 +93,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.58
+  m_fontSize: 19.1
   m_fontSizeBase: 19.58
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -209,6 +210,36 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1790456155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1790456156}
+  m_Layer: 5
+  m_Name: RegularTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1790456156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790456155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 247679147318875345}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483392692770804965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026da01d6f5d56142abbd4d6d15fc551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusPercent: 0.182
+  radiusPercent: 1
   segmentCount: 9
   degreeOffset: 8.49376
   openKey: 0
@@ -1066,6 +1097,7 @@ MonoBehaviour:
   pressColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   defaultSprite: {fileID: 21300000, guid: dcea51d6065d64246aeec467afeff684, type: 3}
   optionParent: {fileID: 8657265854436057429}
+  regularTransform: {fileID: 1790456155}
   onClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1553,7 +1585,7 @@ RectTransform:
   m_GameObject: {fileID: 8657265854436057429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 6649034327383482117}
   - {fileID: 7551002423880337545}
@@ -1565,6 +1597,7 @@ RectTransform:
   - {fileID: 2959101790349856681}
   - {fileID: 3970408995403959840}
   - {fileID: 4938198324986737918}
+  - {fileID: 1790456156}
   m_Father: {fileID: 6649034327346200006}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

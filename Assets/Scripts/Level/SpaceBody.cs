@@ -43,7 +43,7 @@ public class SpaceBody : MonoBehaviour
     {
         LevelManager.instance.selectionRadial.transform.position = Camera.main.WorldToScreenPoint(actualBody.position);
         LevelManager.instance.selectionRadial.titleText.text = bodyName;
-        LevelManager.instance.selectionRadial.ForceOpen();
+        LevelManager.instance.selectionRadial.ForceOpen(actualBody.transform);
     }
 
     private void CloseRadial()
