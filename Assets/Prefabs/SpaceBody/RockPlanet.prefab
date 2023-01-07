@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797978813605610702}
   - component: {fileID: 2050001801432387580}
+  - component: {fileID: 8328746920471413549}
   m_Layer: 0
   m_Name: RockPlanet
   m_TagString: Untagged
@@ -44,24 +45,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d2e7834ed284f46ba65783e6246084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyName: Unnamed Celestial Body
+  collisionRadius: 0.6
   actualBody: {fileID: 1512728908691231416}
   pivot: {fileID: 3552908258212095554}
   isGasGiant: 0
   randomColor: 0
   sR: {fileID: 4762850357096716492}
   possibleSprites:
-  - {fileID: 21300000, guid: 392fa65e2a9f96a4e8d7c470d12a0e85, type: 3}
-  - {fileID: 21300000, guid: e9d132629f1d7dc4aad5d41548878b60, type: 3}
-  - {fileID: 21300000, guid: 4a0b114a6eb2f29459cd058283788e31, type: 3}
-  - {fileID: 21300000, guid: 2a1acc61eab94414c874d38ed9886ca0, type: 3}
-  - {fileID: 21300000, guid: 17ad8411d9521d644aea7f391c9a7fb9, type: 3}
-  - {fileID: 21300000, guid: ed7c93f351ba86b4eb8cf4501f40fc54, type: 3}
-  - {fileID: 21300000, guid: cedf7a5fc424cc84e85b9397dd16d9c8, type: 3}
-  - {fileID: 21300000, guid: 7b6172df001c23647bb69c571ec8775e, type: 3}
-  - {fileID: 21300000, guid: 3095bc381f85e7c44913f66111275c7c, type: 3}
-  - {fileID: 21300000, guid: 27257d2f2672f184caadcfce68738f8d, type: 3}
-  - {fileID: 21300000, guid: 15cded6e49eecb3458afa4b6ee971d85, type: 3}
-  - {fileID: 21300000, guid: 195d136ce46ecc64e8be5321afdb0aa5, type: 3}
+  - {fileID: 21300000, guid: dab831ba35246174f8d3851b78357368, type: 3}
+  - {fileID: 21300000, guid: ace273cc267e39242a32a5f96cc1a631, type: 3}
+  - {fileID: 21300000, guid: e2ba949bf941b184ab2fb3e8ab9189a5, type: 3}
+  - {fileID: 21300000, guid: ddaab5d6087f01f49b43275ffd956c5c, type: 3}
+  - {fileID: 21300000, guid: 69645e82819b6824798e8c51108ee7ea, type: 3}
+  - {fileID: 21300000, guid: 1c0af67691df0004aa7777ba8189d569, type: 3}
+  - {fileID: 21300000, guid: 535832ce92aec14449f59e4793d0f1dc, type: 3}
+  - {fileID: 21300000, guid: 533b1e52770ae1d45a3f5f9377bb7008, type: 3}
+  - {fileID: 21300000, guid: a46424d398a1e39458d2d4e1c368b4ff, type: 3}
+  - {fileID: 21300000, guid: f15df19742befbc439c5f431d5559553, type: 3}
+--- !u!58 &8328746920471413549
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797978813605610705}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.41
 --- !u!1 &1209360053261912314
 GameObject:
   m_ObjectHideFlags: 0
