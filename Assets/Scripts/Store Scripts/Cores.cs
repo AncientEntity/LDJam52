@@ -15,5 +15,6 @@ public class Cores : MonoBehaviour
     {
         Sell_all.text = "$" + (GameManager.planet_core * cost).ToString();
         Sell.text = "$" + cost.ToString();
+        //Sell_all.color = Color.red;
     }
 }
