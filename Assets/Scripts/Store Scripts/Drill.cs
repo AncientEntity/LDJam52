@@ -14,6 +14,6 @@ public class Drill : MonoBehaviour
     {
         drill = GameManager.drill_level + 1;
         Drill_Level.text = drill.ToString();
-        Buy.text = cost.ToString();
+        Buy.text = "$" + cost.ToString();
     }
 }

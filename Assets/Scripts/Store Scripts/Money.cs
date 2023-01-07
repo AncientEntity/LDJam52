@@ -9,6 +9,6 @@ public class Money : MonoBehaviour
 
     void Update()
     {
-        ValueText.text = GameManager.money.ToString();
+        ValueText.text = "$" + GameManager.money.ToString();
     }
 }

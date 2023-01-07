@@ -13,7 +13,7 @@ public class Iron : MonoBehaviour
     void Update()
     {
         iron = GameManager.iron * 100;
-        Sell_all.text = iron.ToString();
-        Sell.text = cost.ToString();
+        Sell_all.text = "$" + iron.ToString();
+        Sell.text = "$" + cost.ToString();
     }
 }
