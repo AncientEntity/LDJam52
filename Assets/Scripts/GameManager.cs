@@ -15,8 +15,10 @@ public class GameManager : MonoBehaviour
     public static int drill_eff   = 1;
 
     //Ship shit
-    public static int ship_storage = 1;
     public static int ship_speed = 1;
+    public static int ship_harvest = 1;
+    public static int ship_storage = 1;
+
 
     //Materials
     public static int iron = 100;
