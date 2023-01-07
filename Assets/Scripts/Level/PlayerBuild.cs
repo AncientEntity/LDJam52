@@ -12,7 +12,10 @@ public abstract class PlayerBuild : MonoBehaviour
     public bool canMove = false;
     public Vector2 targetPosition = Vector2.zero;
     public float collisionRadius = 0.5f;
-    
+    [Space]
+    public int resourceCount = 0;
+    public int maxResources = 0;
+
     public bool isSelected { get; protected set; }
     
 

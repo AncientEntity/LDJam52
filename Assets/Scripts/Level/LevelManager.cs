@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class LevelManager : MonoBehaviour
     public Transform bodyParent;
     public GameObject[] orbits;
     public RadialSelection selectionRadial;
+    public TextMeshProUGUI timeLeftText;
     [Space]
     private List<SpaceBody> solarBodies = new List<SpaceBody>();
     private List<PlayerBuild> playerBuilds { get { return PlayerBuild.all; } }
@@ -22,6 +24,8 @@ public class LevelManager : MonoBehaviour
     private bool isInit = false;
     private Vector2 lastMousePosition = Vector2.zero;
     private SpaceBody currentlyPressed = null;
+
+    private float timeLeft = 60 * 5;
 
     private void Awake()
     {
@@ -69,6 +73,10 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
         CheckPlanetSelect();
+        
+        timeLeft -= Time.deltaTime;
+        timeLeftText.text = "Till Supernova: " + (timeLeft/60f).ToString("F2") +"yrs";
+        
     }
 
     private void CheckPlanetSelect()

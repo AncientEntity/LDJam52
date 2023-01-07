@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class DeliveryShip : PlayerBuild
 {
     public float stopDistance = 0.1f;
@@ -9,6 +9,8 @@ public class DeliveryShip : PlayerBuild
 
     public ParticleSystem engineParticles;
     public SpaceBody targetPlanet;
+
+    public TextMeshPro valueText;
 
 
     private void Update()
@@ -51,4 +53,14 @@ public class DeliveryShip : PlayerBuild
         engineParticles.Play();
 
     }
+
+    public void SetResources(int v)
+    {
+        resourceCount = v;
+        valueText.text = "" + v;
+
+        valueText.enabled = v > 0;
+
+    }
+
 }
