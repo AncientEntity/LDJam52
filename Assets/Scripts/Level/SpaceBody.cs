@@ -12,6 +12,9 @@ public abstract class SpaceBody : MonoBehaviour
     public Transform actualBody; //Body inside Pivot.
     public Transform pivot; //Pivot.
     public SpriteRenderer sR;
+    [Space]
+    public float resourcePurity = 1f;
+    public int drillCount = 0;
 
     public void Init(float height, string bodyName)
     {

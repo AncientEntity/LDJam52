@@ -159,7 +159,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 500
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8542807317936609626
 MonoBehaviour:
@@ -358,11 +358,13 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   collisionRadius: 0.75
   resourceCount: 0
-  maxResources: 0
+  maxResources: 50
+  state: 2
   stopDistance: 0.1
   moveSpeed: 5
   engineParticles: {fileID: 7450767117507215305}
   targetPlanet: {fileID: 0}
+  targetStation: {fileID: 0}
   valueText: {fileID: 8542807317936609626}
 --- !u!58 &1580880659
 CircleCollider2D:

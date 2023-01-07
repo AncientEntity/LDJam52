@@ -4,13 +4,24 @@ using UnityEngine;
 using TMPro;
 public class DeliveryShip : PlayerBuild
 {
+    public shipState state = shipState.Idle;
     public float stopDistance = 0.1f;
     public float moveSpeed = 0.1f;
 
     public ParticleSystem engineParticles;
     public SpaceBody targetPlanet;
+    public SpaceBody targetStation;
 
     public TextMeshPro valueText;
+
+
+
+    public enum shipState
+    {
+        Retrieving,
+        Selling,
+        Idle,
+    }
 
 
     private void Update()
@@ -19,6 +30,46 @@ public class DeliveryShip : PlayerBuild
         {
             DoMovement();
         }
+        StateHandler();
+        if(!canMove && state == shipState.Retrieving && targetPlanet != null)
+        {
+            transform.SetParent(targetPlanet.actualBody);
+            //At planet to retrieve
+            SetResources(resourceCount + targetPlanet.resourcePurity * targetPlanet.drillCount * Time.deltaTime);
+            Debug.Log(resourceCount);
+            if(resourceCount >= maxResources)
+            {
+                resourceCount = maxResources;
+                state = shipState.Selling;
+                transform.SetParent(null);
+            }
+        } else if (!canMove && state == shipState.Selling && targetStation != null)
+        {
+
+        }
+    }
+
+    private void StateHandler()
+    {
+
+        if (state != shipState.Idle && targetPlanet == null)
+        {
+            state = shipState.Idle;
+        }
+        else if (state == shipState.Idle && targetPlanet != null)
+        {
+            if (resourceCount >= maxResources)
+            {
+                state = shipState.Selling;
+            }
+            else
+            {
+                state = shipState.Retrieving;
+                targetPosition = targetPlanet.actualBody.position;
+                canMove = true;
+            }
+        }
+
     }
 
     private void DoMovement()
@@ -49,15 +100,17 @@ public class DeliveryShip : PlayerBuild
     {
         canMove = true;
         targetPosition = position;
+        targetPlanet = null;
+        transform.SetParent(null);
 
         engineParticles.Play();
 
     }
 
-    public void SetResources(int v)
+    public void SetResources(float v)
     {
         resourceCount = v;
-        valueText.text = "" + v;
+        valueText.text = "" + (int)v;
 
         valueText.enabled = v > 0;
 

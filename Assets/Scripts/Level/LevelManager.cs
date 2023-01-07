@@ -151,6 +151,20 @@ public class LevelManager : MonoBehaviour
             } else
             {
                 //If planet, if trade station, etc.
+                if(hovering.GetType() == typeof(Planet))
+                {
+                    foreach(PlayerBuild select in PlayerBuild.selectedBuilds.ToArray())
+                    {
+                        if(select.GetType() == typeof(DeliveryShip))
+                        {
+                            DeliveryShip s = (DeliveryShip)select;
+                            s.targetPlanet = hovering;
+
+                            s.SetSelected(false);
+                            
+                        }
+                    }
+                }
             }
         }
 
