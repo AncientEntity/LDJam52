@@ -1,0 +1,49 @@
+STORE:
+
+-SELL:
+	ORE (2 or 3 types??) 
+		
+
+-BUY:
+	-Personillazation:
+		-Cromas
+		
+	-Upgrades:
+		-DRILLS (Solar eff, bits , speed)
+			-lvl decreases cost for game
+			-maybe solar eff can only be bought by cores. Late game improvement kinda thing
+			-eff,speed,bits mines faster. somthin like this 0.7 * lvl + formula like 0.3 * eff + 0.5*speed + 0.4 * bits  = ammount per second
+		-SHIP	
+			-(upgrade ship to point to leave solar system)
+			-Or use them for getting mats off planets too sell. 
+	-Tools:
+		-DRILLS
+		-SHIP??
+			-different ships??
+		-Core extrxtion (upgrade unavalable until bit lvl 5 or somin)
+			-(maybe different lvl planets, depending on lvl can extract core from that planet, higher level more cores??)
+		-Some kind of dowsers to see what ore and ammount is avalable from planet??
+	-Companions??
+	-Planets (maybe bid on them)
+-Money system:
+
+
+
+Ideas:
+	-need more things for shop
+	-are we wanting to sell in the solar system or space station. 
+		-if solar system. We can have ship upgrades and buy more ships. 
+		Which can transport items faster, store more, more ships in each group
+		more group exc. Exc like turmoils hourses. If you dont sell in time, could sell in shop for a cheaper price
+		chance to get more during the mission. maybe random between 75 - 150 for iron, where space station sells for 
+		100 kinda thing 
+		-else, upgrade ships grabes faster more ships and that still. But if you dont grab all
+		mats before end of time then you dont get all the mats before you loose on stuff you mined
+	-need more things we can interact with planets with. 
+		-Show planets core value, ore, ore ammount (maybe show all ore with ?? then use dowser to display)
+	-some kind of gass or something with the sun to give a boost productivity. (throw nuke into sun?? Chance to explode?? or chance to boost sun)
+	-dowser level. See lower down?? idk what upgrades would be
+		
+	
+
+
