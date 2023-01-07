@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceBody : MonoBehaviour
+public abstract class SpaceBody : MonoBehaviour
 {
     public string bodyName = "Unnamed Celestial Body";
     public float collisionRadius = 0.5f;

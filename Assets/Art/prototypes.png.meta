@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -1535624110044141554
     second: prototypes_2
+  - first:
+      213: -767380274395552325
+    second: prototypes_3
+  - first:
+      213: -1352264828435208722
+    second: prototypes_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -150,7 +156,7 @@ TextureImporter:
         width: 374
         height: 374
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,6 +164,48 @@ TextureImporter:
       bones: []
       spriteID: e082b4c020e50bae0800000000000000
       internalID: -1535624110044141554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prototypes_3
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 70
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5e209c4b7b955f0800000000000000
+      internalID: -767380274395552325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prototypes_4
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 70
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee56dda9d4acb3de0800000000000000
+      internalID: -1352264828435208722
       vertices: []
       indices: 
       edges: []
