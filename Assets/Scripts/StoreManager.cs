@@ -4,56 +4,87 @@ using UnityEngine;
 
 public class StoreManager : MonoBehaviour
 {   
-    public int drill_mod = 3;
-    public int drill_speed_mod = 4;
-    public int drill_bit_mod = 6;
-    public int drill_eff_mod = 8;
+    public int ship_speed_mod = 3;
+    public int ship_storage_mod = 3;
+    public int ship_harvest_mod = 3; 
 
 
 
 
 /************************************BUY**************************************/
 
+    /***DRILL***/
     //buy drill kep is 1
     public void BuyDrill(){
-        bool buy = GameManager.instance.BuyDrill(Drill.cost, 1);
-        if(buy){
-            Drill.cost = Drill.cost * drill_mod;
-            //Change ui to bought
-            //change price 
-        }else{
-            //add ui to cant buy 
-            //display how much your missing? 
+        if(GameManager.drill_level <= 10){
+            bool buy = GameManager.instance.BuyDrill(Drill.cost, 1);
+            if(buy){
+                Drill.update_costs(1);
         }
         return;
+        }
     }
 
     //buy speed key is 2
     public void Buy_Drill_Speed(){
-        bool buy = GameManager.instance.BuyDrill(Drill.speed_cost, 2);
-        if(buy){
-            Drill.speed_cost = Drill.speed_cost * drill_speed_mod;
+        if(GameManager.drill_speed <= 10){
+            bool buy = GameManager.instance.BuyDrill(Drill.speed_cost, 2);
+            if(buy){
+                Drill.update_costs(2);
+            }
         }
         
     }
 
     //buy bit key is 3
     public void Buy_Drill_Bit(){
-        bool buy = GameManager.instance.BuyDrill(Drill.bit_cost, 3);
-        if(buy){
-            Drill.bit_cost = Drill.bit_cost * drill_bit_mod;          
+        if(GameManager.drill_bit <= 5){
+            bool buy = GameManager.instance.BuyDrill(Drill.bit_cost, 3);
+            if(buy){
+                Drill.update_costs(3);        
+            }
         }
 
     }
 
     //buy eff key is 4
     public void Buy_Drill_Eff(){
-        bool buy = GameManager.instance.BuyDrill(Drill.eff_cost, 4);
-        if(buy){
-            Drill.eff_cost = Drill.eff_cost * drill_eff_mod;    
+        if(GameManager.drill_eff <= 10){
+            bool buy = GameManager.instance.BuyDrill(Drill.eff_cost, 4);
+            if(buy){
+                Drill.update_costs(4);    
+            }
         }
-
     }
+
+
+
+    /****SHIP****/
+    //buy speed key is 1
+    public void Buy_Ship_Speed(){
+        bool buy = GameManager.instance.BuyShip(Ship.speed_cost, 1);
+        if(buy){
+            Ship.speed_cost = Ship.speed_cost * ship_speed_mod;
+        }
+    }
+
+    //buy harvest key is 2
+    public void Buy_Ship_Harvest(){
+        bool buy = GameManager.instance.BuyShip(Ship.harvest_cost, 2);
+        if(buy){
+            Ship.harvest_cost = Ship.harvest_cost * ship_harvest_mod;
+        }
+    }
+
+    //buy storage key is 3
+    public void Buy_Ship_Storage(){
+        bool buy = GameManager.instance.BuyShip(Ship.storage_cost, 3);
+        if(buy){
+            Ship.storage_cost = Ship.storage_cost * ship_storage_mod;   
+        }
+    }
+
+
 
 
 /*********************************SELL****************************************/

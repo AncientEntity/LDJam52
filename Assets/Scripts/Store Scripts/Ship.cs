@@ -18,9 +18,18 @@ public class Ship : MonoBehaviour
     public static int speed_cost = 100;
     public static int harvest_cost = 100;
 
+    /*
+    storage Max 10: increases storage ammount of ships (max x500%)
+    Speed Max 10: increases raw flying speed of ships (max x500%)
+    Harvest Max 10: increases how fast ship picks up resourses from planet (max x500%)
+    */
+
+
+
+
     void Update()
     {
-        Storage_lvl.text = (GameManager.ship_storage + 1).ToString();
+        Storage_lvl.text = (GameManager.ship_storage).ToString();
         Storage_Buy.text = "$" + storage_cost.ToString();
         if(GameManager.HasMoney(storage_cost) == true){
             Storage_Buy.color = Color.green;
@@ -28,7 +37,7 @@ public class Ship : MonoBehaviour
             Storage_Buy.color = Color.red;
         }
 
-        Speed_lvl.text = (GameManager.ship_speed + 1).ToString();
+        Speed_lvl.text = (GameManager.ship_speed ).ToString();
         Speed_Buy.text = "$" + speed_cost.ToString();
         if(GameManager.HasMoney(speed_cost) == true){
             Speed_Buy.color = Color.green;
@@ -36,7 +45,7 @@ public class Ship : MonoBehaviour
             Speed_Buy.color = Color.red;
         }
 
-        Harvest_lvl.text = (GameManager.ship_harvest + 1).ToString();
+        Harvest_lvl.text = (GameManager.ship_harvest).ToString();
         Harvest_Buy.text = "$" + harvest_cost.ToString();   
         if(GameManager.HasMoney(harvest_cost) == true){
             Harvest_Buy.color = Color.green;
