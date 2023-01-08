@@ -23,7 +23,7 @@ public abstract class SpaceBody : MonoBehaviour
         }
         set
         {
-            LevelManager.drillsBought += value;
+            LevelManager.drillsBought += 1;
             _drillCount += value;
         }
     }
