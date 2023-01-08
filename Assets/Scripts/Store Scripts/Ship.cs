@@ -29,28 +29,43 @@ public class Ship : MonoBehaviour
 
     void Update()
     {
-        Storage_lvl.text = (GameManager.ship_storage).ToString();
-        Storage_Buy.text = "$" + storage_cost.ToString();
-        if(GameManager.HasMoney(storage_cost) == true){
-            Storage_Buy.color = Color.green;
+        if(GameManager.ship_storage <= 10){
+            Storage_lvl.text = (GameManager.ship_storage).ToString();
+            Storage_Buy.text = "$" + storage_cost.ToString();
+            if(GameManager.HasMoney(storage_cost) == true){
+                Storage_Buy.color = Color.green;
+            }else{
+                Storage_Buy.color = Color.red;
+            }
         }else{
-            Storage_Buy.color = Color.red;
+            Storage_Buy.text = "MAX LEVEL";
+            Storage_Buy.color = Color.black;
         }
 
-        Speed_lvl.text = (GameManager.ship_speed ).ToString();
-        Speed_Buy.text = "$" + speed_cost.ToString();
-        if(GameManager.HasMoney(speed_cost) == true){
-            Speed_Buy.color = Color.green;
+        if(GameManager.ship_speed <= 10){
+            Speed_lvl.text = (GameManager.ship_speed ).ToString();
+            Speed_Buy.text = "$" + speed_cost.ToString();
+            if(GameManager.HasMoney(speed_cost) == true){
+                Speed_Buy.color = Color.green;
+            }else{
+                Speed_Buy.color = Color.red;
+            }
         }else{
-            Speed_Buy.color = Color.red;
+            Speed_Buy.text = "MAX LEVEL";
+            Speed_Buy.color = Color.black;
         }
 
-        Harvest_lvl.text = (GameManager.ship_harvest).ToString();
-        Harvest_Buy.text = "$" + harvest_cost.ToString();   
-        if(GameManager.HasMoney(harvest_cost) == true){
-            Harvest_Buy.color = Color.green;
+        if(GameManager.ship_harvest <= 10){
+            Harvest_lvl.text = (GameManager.ship_harvest).ToString();
+            Harvest_Buy.text = "$" + harvest_cost.ToString();   
+            if(GameManager.HasMoney(harvest_cost) == true){
+                Harvest_Buy.color = Color.green;
+            }else{
+                Harvest_Buy.color = Color.red;
+            }
         }else{
-            Harvest_Buy.color = Color.red;
+            Harvest_Buy.text = "MAX LEVEL";
+            Harvest_Buy.color = Color.black;
         }
         
 

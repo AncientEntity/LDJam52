@@ -62,25 +62,31 @@ public class StoreManager : MonoBehaviour
     /****SHIP****/
     //buy speed key is 1
     public void Buy_Ship_Speed(){
-        bool buy = GameManager.instance.BuyShip(Ship.speed_cost, 1);
-        if(buy){
-            Ship.speed_cost = Ship.speed_cost * ship_speed_mod;
+        if(GameManager.ship_speed <= 10){      
+            bool buy = GameManager.instance.BuyShip(Ship.speed_cost, 1);
+            if(buy){
+                Ship.speed_cost = Ship.speed_cost * ship_speed_mod;
+            }
         }
     }
 
     //buy harvest key is 2
     public void Buy_Ship_Harvest(){
-        bool buy = GameManager.instance.BuyShip(Ship.harvest_cost, 2);
-        if(buy){
-            Ship.harvest_cost = Ship.harvest_cost * ship_harvest_mod;
+        if(GameManager.ship_harvest <= 10){
+            bool buy = GameManager.instance.BuyShip(Ship.harvest_cost, 2);
+            if(buy){
+                Ship.harvest_cost = Ship.harvest_cost * ship_harvest_mod;
+            }
         }
     }
 
     //buy storage key is 3
     public void Buy_Ship_Storage(){
-        bool buy = GameManager.instance.BuyShip(Ship.storage_cost, 3);
-        if(buy){
-            Ship.storage_cost = Ship.storage_cost * ship_storage_mod;   
+        if(GameManager.ship_storage <= 10){
+            bool buy = GameManager.instance.BuyShip(Ship.storage_cost, 3);
+            if(buy){
+                Ship.storage_cost = Ship.storage_cost * ship_storage_mod;   
+            }
         }
     }
 
