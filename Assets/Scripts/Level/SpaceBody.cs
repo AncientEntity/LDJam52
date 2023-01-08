@@ -15,7 +15,20 @@ public abstract class SpaceBody : MonoBehaviour
     [Space]
     public bool activeProduction = true;
     public float resourcePurity = 1f;
-    public int drillCount = 0;
+    public int drillCount
+    {
+        get
+        {
+            return _drillCount;
+        }
+        set
+        {
+            LevelManager.drillsBought += value;
+            _drillCount += value;
+        }
+    }
+    private int _drillCount = 0;
+
     public float startingResources = 800;
     public float currentResources = 800;
     public float minedWaiting = 0;
@@ -121,30 +134,30 @@ public abstract class SpaceBody : MonoBehaviour
                 ToggleColorSet();
                 break;
             case 5: // 1000 drill
-                if (drillCount != 1 || LevelManager.instance.stageMoney < 1000)
+                if (drillCount != 1 || LevelManager.instance.stageMoney < 250)
                 {
                     return;
                 }
                 drillCount++;
-                LevelManager.instance.stageMoney -= 1000;
+                LevelManager.instance.stageMoney -= 250;
                 ToggleColorSet();
                 break;
             case 6: // 2500 drill
-                if (drillCount != 2 || LevelManager.instance.stageMoney < 2500)
+                if (drillCount != 2 || LevelManager.instance.stageMoney < 250)
                 {
                     return;
                 }
                 drillCount++;
-                LevelManager.instance.stageMoney -= 2500;
+                LevelManager.instance.stageMoney -= 250;
                 ToggleColorSet();
                 break;
             case 7: // 5000 drill
-                if (drillCount != 3 || LevelManager.instance.stageMoney < 5000)
+                if (drillCount != 3 || LevelManager.instance.stageMoney < 250)
                 {
                     return;
                 }
                 drillCount++;
-                LevelManager.instance.stageMoney -= 5000;
+                LevelManager.instance.stageMoney -= 250;
                 ToggleColorSet();
                 break;
         }

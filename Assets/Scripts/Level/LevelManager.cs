@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public static readonly string[] bodySuffixes = { "A", "B", "C", "D", "E", "F", "G", "H", "I"};
 
     public static LevelManager instance = null;
+    public static int drillsBought = 0;
     [Space]
     public GameObject sunPrefab;
     public List<GameObject> bodyPrefabs = new List<GameObject>();
@@ -35,11 +36,12 @@ public class LevelManager : MonoBehaviour
     private SpaceBody currentlyPressed = null;
 
     private float timeLeft = 60 * 8;
-    private int currentShipPrice = 0;
+    private int currentShipPrice = 250;
 
     private void Awake()
     {
         instance = this;
+        drillsBought = 0;
     }
 
     private void Start()

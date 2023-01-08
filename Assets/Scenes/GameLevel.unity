@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buy Trade Ship\n$0
+  m_text: Buy Trade Ship\n$250
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1120,17 +1120,17 @@ PrefabInstance:
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: segmentNames.Array.data[5]
-      value: Buy Drill 2 ($1000)
+      value: Buy Drill 2 ($250)
       objectReference: {fileID: 0}
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: segmentNames.Array.data[6]
-      value: Buy Drill 3 ($2500)
+      value: Buy Drill 3 ($250)
       objectReference: {fileID: 0}
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: segmentNames.Array.data[7]
-      value: Buy Drill 4 ($5000)
+      value: Buy Drill 4 ($250)
       objectReference: {fileID: 0}
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
