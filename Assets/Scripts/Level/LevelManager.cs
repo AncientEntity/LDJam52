@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI tradeShipButtonText;
     public Image toggleRadial;
     public Image[] drillRadials;
-    public int stageMoney { get { return (int)GameManager.money; }set{ GameManager.money = value;} }
+    public int stageMoney { get { return (int)GameManager.money; }set{ GameManager.money = value; } }
     public int shipCostIncrement = 250;
 
     private List<SpaceBody> solarBodies = new List<SpaceBody>();
@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour
     {
         instance = this;
         drillsBought = 0;
+        Summery.starting_money = stageMoney;
     }
 
     private void Start()

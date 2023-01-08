@@ -24,6 +24,7 @@ public abstract class SpaceBody : MonoBehaviour
         set
         {
             LevelManager.drillsBought += 1;
+            Summery.drills_bought = LevelManager.drillsBought;
             _drillCount += value;
         }
     }
