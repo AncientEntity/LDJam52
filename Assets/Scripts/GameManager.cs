@@ -29,11 +29,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    private void Awake()
-    {
-        instance = this;
-    }
-
+    private void Awake(){instance = this;}
 
 /*******************************Money Managing******************************/
 
@@ -128,6 +124,4 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
-
 }
-    

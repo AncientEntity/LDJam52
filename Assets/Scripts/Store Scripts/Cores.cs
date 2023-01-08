@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class Cores : MonoBehaviour
 {
-    public Text Ext_Power;
     public Text Ext_Lvl;
     public Text Ext_Buy;
+    public Text Buy_Enabled;
 
     public Text Sell_all;
     public Text Sell;
 
-    public static int ext_cost = 100;
-    public static int cost = 666;
+    public static int ext_cost = 100000;
+    public static int cost = 50000;
 
     // Update is called once per frame
     void Update()
@@ -22,6 +22,8 @@ public class Cores : MonoBehaviour
             Ext_Lvl.text = "1";
             if(GameManager.drill_bit == 5){
                 //if can buy
+                Buy_Enabled.enabled = false;
+                Ext_Buy.enabled = true;
                 Ext_Buy.text = "$" + ext_cost.ToString();
                 if(GameManager.HasMoney(ext_cost) == true){
                     Ext_Buy.color = Color.green;
@@ -30,10 +32,12 @@ public class Cores : MonoBehaviour
                 }
             }else if(GameManager.drill_bit < 5){
                 //cant buy
-                Ext_Buy.text = "Insufficient Bit Level";
-                Ext_Buy.color = Color.black;
+                Buy_Enabled.enabled = true;
+                Ext_Buy.enabled = false;
             }
         }else{
+            Ext_Buy.enabled = true;
+            Buy_Enabled.enabled = false;
             Ext_Buy.text = "MAX LEVEL";
             Ext_Buy.color = Color.black;
         }

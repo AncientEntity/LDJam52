@@ -24,12 +24,12 @@ public class Ship : MonoBehaviour
     public static int harvest_cost = 500;
 
     //% power of each upgrade (storage is just raw ammount it can carry)
-    public static int storage_amm = 50;
+    public static int storage_amm = 1;
     public static int speed_power = 100;
     public static int harvest_power = 100;
 
     //Incrementations of each upgrade
-    int storage_inc = 15;
+    int storage_inc = 2;
     int speed_inc = 35;
     int harvest_inc = 35;
 

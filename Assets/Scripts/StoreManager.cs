@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class StoreManager : MonoBehaviour
 {  
+    public GameObject Buy_Screen;
+    public GameObject Upgrade_Screen;  
+    public GameObject Sell_Screen;
 
 /************************************BUY**************************************/
 
@@ -93,26 +96,21 @@ public class StoreManager : MonoBehaviour
 
 /*********************************SELL****************************************/
 
-    public void SellIron(bool all){
-        bool sell = GameManager.instance.SellIron(Iron.cost , all);
-        if(sell == true){
-            print("selling was successful");
-        }else{
-            print("selling failed");
-        }
-    }
+    public void SellIron(bool all){bool sell = GameManager.instance.SellIron(Iron.cost , all);}
 
-    public void SellCore(bool all){
-        bool sell = GameManager.instance.SellCore(Cores.cost , all);
-    }
-
-
-
-
+    public void SellCore(bool all){bool sell = GameManager.instance.SellCore(Cores.cost , all);}
 
 /********************************OTHER****************************************/
 
     public void buy_fail(){
 
+    }
+
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            Buy_Screen.SetActive(false);
+            Upgrade_Screen.SetActive(false);
+            Sell_Screen.SetActive(false);
+        }
     }
 }
