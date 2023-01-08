@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
     private Vector2 lastMousePosition = Vector2.zero;
     private SpaceBody currentlyPressed = null;
 
-    private float timeLeft = 60 * 8;
+    private float timeLeft = 60 * 10;
     private int currentShipPrice = 250;
 
     private void Awake()
@@ -88,6 +88,11 @@ public class LevelManager : MonoBehaviour
         timeLeft -= Time.deltaTime;
         timeLeftText.text = "Till Supernova: " + (timeLeft/60f).ToString("F2") +"yrs";
         moneyText.text = "Credits: $"+stageMoney;
+
+        if(timeLeft <= 0)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Summary");
+        }
     }
 
     private void CheckPlanetSelect()
