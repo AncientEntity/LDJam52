@@ -7,15 +7,19 @@ public class Drill : MonoBehaviour
 {
     public Text Drill_Level;
     public Text Drill_Buy;
+    public Text Drill_Power;
 
     public Text Speed_level;
     public Text Speed_Buy;
+    public Text Speed_Power;
 
     public Text Bit_level;
     public Text Bit_Buy;
+    public Text Bit_Power;
 
     public Text Eff_level;
     public Text Eff_Buy;
+    public Text Eff_Power;
 
     public static float Drill_Mining = 0;
 
@@ -25,11 +29,16 @@ public class Drill : MonoBehaviour
     public static int bit_cost = 500;
     public static int eff_cost = 400;
 
+    public static int lvl_power = 100;
+    public static int speed_power = 100;
+    public static int bit_power = 100;
+    public static int eff_power = 100;
+
     /*
-    Drill Level Max = 10: Increases raw (high) drill production for high cost.
-    Speed Max = 10: Increases mining speed. Increasing (med) drill production
-    Bit Max = 5: Increases *depth* drill can reach, increasing (small) drill production but is a requirment for solar harvesting 
-    Eff Max = 10: Takes less solar power to power   
+    Drill Level Max = 10: Increases raw (med) drill production for high cost.
+    Speed Max = 10: Increases mining speed. Increasing (high) drill production
+    Bit Max = 5: Increases *depth* drill can reach, increasing (med) drill production but is a requirment for solar harvesting 
+    Eff Max = 10: Takes less solar power to power, increases power (low) production   
     */
 
 
@@ -37,55 +46,71 @@ public class Drill : MonoBehaviour
     void Update()
     {
         if(GameManager.drill_level <= 10){
+            lvl_power = (100 + 30 * (GameManager.drill_level - 2)); 
             Drill_Level.text = (GameManager.drill_level).ToString();
             Drill_Buy.text = "$" + cost.ToString();
+            Drill_Power.text = (lvl_power).ToString() + "% -> " + (lvl_power + 30).ToString() + "%";
             if(GameManager.HasMoney(cost) == true){
                 Drill_Buy.color = Color.green;
             }else{
                 Drill_Buy.color = Color.red;
             }
         }else{
+            lvl_power = (100 + 30 * (GameManager.drill_level -2));
+            Drill_Power.text = lvl_power.ToString() + "%";
             Drill_Buy.text = "MAX LEVEL";
             Drill_Buy.color = Color.black;
         }
 
         if(GameManager.drill_speed <= 10){
+            speed_power = 100 + 45 * (GameManager.drill_speed - 2); 
             Speed_level.text = (GameManager.drill_speed ).ToString();
             Speed_Buy.text = "$" + speed_cost.ToString();
+            Speed_Power.text = speed_power.ToString() + "% -> " + (speed_power + 45).ToString() + "%";
             if(GameManager.HasMoney(speed_cost) == true){
                 Speed_Buy.color = Color.green;
             }else{
                 Speed_Buy.color = Color.red; 
             }
         }else{
+            speed_power = 100 + 45 * (GameManager.drill_speed - 2); 
+            Speed_Power.text = speed_power.ToString() + "%";
             Speed_Buy.text = "MAX LEVEL";
             Speed_Buy.color = Color.black;
         }
 
 
         if(GameManager.drill_bit <= 5){
+            bit_power = 100 + 50 * (GameManager.drill_bit - 2);
             Bit_level.text = (GameManager.drill_bit).ToString();
             Bit_Buy.text = "$" + bit_cost.ToString();
+            Bit_Power.text = bit_power.ToString() + "% -> " + (bit_power + 50).ToString() + "%";
             if(GameManager.HasMoney(bit_cost) == true){
                 Bit_Buy.color = Color.green;
             }else{
                 Bit_Buy.color = Color.red; 
             }    
         }else{
+            bit_power = 100 + 50 * (GameManager.drill_bit - 2);
+            Bit_Power.text = bit_power.ToString() + "%";
             Bit_Buy.text = "MAX LEVEL";
             Bit_Buy.color = Color.black;
         }
         
 
         if(GameManager.drill_eff <= 10){
+            eff_power = 100 + 15 * (GameManager.drill_eff - 2);
             Eff_level.text = (GameManager.drill_eff).ToString();
             Eff_Buy.text = "$" + eff_cost.ToString();
+            Eff_Power.text = eff_power.ToString() + "% -> " + (eff_power + 15).ToString() + "%";
             if(GameManager.HasMoney(eff_cost) == true){
                 Eff_Buy.color = Color.green;
             }else{
                 Eff_Buy.color = Color.red; 
             }
         }else{
+            eff_power = 100 + 15 * (GameManager.drill_eff - 2);
+            Eff_Power.text = eff_power.ToString() + "%";
             Eff_Buy.text = "MAX LEVEL";
             Eff_Buy.color = Color.black;
         }
