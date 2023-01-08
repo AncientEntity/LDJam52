@@ -26,6 +26,10 @@ public class DeliveryShip : PlayerBuild
         Idle,
     }
 
+    private void Start()
+    {
+        maxResources = Ship.storage_amm;
+    }
 
     private void Update()
     {
@@ -39,6 +43,10 @@ public class DeliveryShip : PlayerBuild
         {
             targetLine.SetPosition(0, targetPlanet.actualBody.position);
             targetLine.SetPosition(1, targetStation.position);
+            targetLine.enabled = true;
+        } else
+        {
+            targetLine.enabled = false;
         }
         StateHandler();
         if(!canMove && state == shipState.Retrieving && targetPlanet != null)
@@ -158,7 +166,7 @@ public class DeliveryShip : PlayerBuild
     public void SetResources(float v)
     {
         resourceCount = v;
-        valueText.text = "" + (int)v;
+        valueText.text = "" + v.ToString("F1");
 
         valueText.enabled = v > 0;
 

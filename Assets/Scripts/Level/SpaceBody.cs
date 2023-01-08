@@ -91,6 +91,8 @@ public abstract class SpaceBody : MonoBehaviour
         LevelManager.instance.selectionRadial.segmentSubmenus[1].transform.GetChild(2).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = (int)currentResources + "/" + (int)startingResources + " Ores";
         LevelManager.instance.selectionRadial.segmentSubmenus[1].transform.GetChild(3).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = (int)currentCores + "/" + (int)startingCores + " Planet Cores";
 
+
+
         ToggleColorSet();
         
     }
@@ -104,10 +106,47 @@ public abstract class SpaceBody : MonoBehaviour
 
     public void OnRadialPressed(int index)
     {
-        if(index == 8)
-        {
-            activeProduction = !activeProduction;
-            ToggleColorSet();
+        switch(index) {
+           case 8:
+                activeProduction = !activeProduction;
+                ToggleColorSet();
+                break;
+            case 4: //250 drill
+                if (drillCount != 0 || LevelManager.instance.stageMoney < 250)
+                {
+                    return;
+                }
+                drillCount++;
+                LevelManager.instance.stageMoney -= 250;
+                ToggleColorSet();
+                break;
+            case 5: // 1000 drill
+                if (drillCount != 1 || LevelManager.instance.stageMoney < 1000)
+                {
+                    return;
+                }
+                drillCount++;
+                LevelManager.instance.stageMoney -= 1000;
+                ToggleColorSet();
+                break;
+            case 6: // 2500 drill
+                if (drillCount != 2 || LevelManager.instance.stageMoney < 2500)
+                {
+                    return;
+                }
+                drillCount++;
+                LevelManager.instance.stageMoney -= 2500;
+                ToggleColorSet();
+                break;
+            case 7: // 5000 drill
+                if (drillCount != 3 || LevelManager.instance.stageMoney < 5000)
+                {
+                    return;
+                }
+                drillCount++;
+                LevelManager.instance.stageMoney -= 5000;
+                ToggleColorSet();
+                break;
         }
     }
 
@@ -121,6 +160,43 @@ public abstract class SpaceBody : MonoBehaviour
         else
         {
             LevelManager.instance.toggleRadial.color = new Color32(164, 33, 42, 116);
+        }
+
+        foreach(UnityEngine.UI.Image img in LevelManager.instance.drillRadials)
+        {
+            img.color = Color.red - new Color(0,0,0,0.5f);
+        }
+        if(drillCount >= 1)
+        {
+            LevelManager.instance.drillRadials[0].color = Color.green - new Color(0, 0, 0, 0.5f);
+        }
+        if (drillCount >= 2)
+        {
+            LevelManager.instance.drillRadials[1].color = Color.green - new Color(0, 0, 0, 0.5f);
+        }
+        if (drillCount >= 3)
+        {
+            LevelManager.instance.drillRadials[2].color = Color.green - new Color(0, 0, 0, 0.5f);
+        }
+        if (drillCount >= 4)
+        {
+            LevelManager.instance.drillRadials[3].color = Color.green - new Color(0, 0, 0, 0.5f);
+        }
+        if (drillCount == 0 && LevelManager.instance.stageMoney >= 250)
+        {
+            LevelManager.instance.drillRadials[0].color = Color.yellow - new Color(0, 0, 0, 0.5f);
+        }
+        if (drillCount == 1 && LevelManager.instance.stageMoney >= 1000)
+        {
+            LevelManager.instance.drillRadials[1].color = Color.yellow - new Color(0, 0, 0, 0.5f);
+        }
+        if (drillCount == 2 && LevelManager.instance.stageMoney >= 2500)
+        {
+            LevelManager.instance.drillRadials[2].color = Color.yellow - new Color(0, 0, 0, 0.5f);
+        }
+        if (drillCount == 3 && LevelManager.instance.stageMoney >= 5000)
+        {
+            LevelManager.instance.drillRadials[3].color = Color.yellow - new Color(0, 0, 0, 0.5f);
         }
     }
 }

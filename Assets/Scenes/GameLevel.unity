@@ -258,6 +258,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112170517}
   m_CullTransparentMesh: 1
+--- !u!114 &169921940 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1379482235108036447, guid: b620543bdcef06f47aa345cd67b0b7c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 371726354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &273504325
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,8 +684,13 @@ MonoBehaviour:
   moneyText: {fileID: 273504327}
   tradeShipButtonText: {fileID: 112170519}
   toggleRadial: {fileID: 1670774526}
-  stageMoney: 0
-  shipCostIncrement: 250
+  drillRadials:
+  - {fileID: 169921940}
+  - {fileID: 2025943162}
+  - {fileID: 1815989288}
+  - {fileID: 1469802388}
+  stageMoney: 500
+  shipCostIncrement: 50
 --- !u!4 &285282654
 Transform:
   m_ObjectHideFlags: 0
@@ -955,6 +972,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 4273724529539045630, guid: b620543bdcef06f47aa345cd67b0b7c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4579349982265298614, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1093,22 +1115,22 @@ PrefabInstance:
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: segmentNames.Array.data[4]
-      value: Buy Drill 1
+      value: Buy Drill 1 ($250)
       objectReference: {fileID: 0}
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: segmentNames.Array.data[5]
-      value: Buy Drill 2
+      value: Buy Drill 2 ($1000)
       objectReference: {fileID: 0}
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: segmentNames.Array.data[6]
-      value: Buy Drill 3
+      value: Buy Drill 3 ($2500)
       objectReference: {fileID: 0}
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: segmentNames.Array.data[7]
-      value: Buy Drill 4
+      value: Buy Drill 4 ($5000)
       objectReference: {fileID: 0}
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
@@ -1259,7 +1281,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2309,6 +2331,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408043147}
   m_CullTransparentMesh: 1
+--- !u!114 &1469802388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1627482757093807181, guid: b620543bdcef06f47aa345cd67b0b7c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 371726354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1481101251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,6 +2632,18 @@ CanvasRenderer:
 --- !u!114 &1670774526 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2108333620557427527, guid: b620543bdcef06f47aa345cd67b0b7c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 371726354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1815989288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2782419426172887791, guid: b620543bdcef06f47aa345cd67b0b7c1,
     type: 3}
   m_PrefabInstance: {fileID: 371726354}
   m_PrefabAsset: {fileID: 0}
@@ -3034,6 +3080,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993561906}
   m_CullTransparentMesh: 1
+--- !u!114 &2025943162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3582465192866311685, guid: b620543bdcef06f47aa345cd67b0b7c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 371726354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2052279338
 GameObject:
   m_ObjectHideFlags: 0

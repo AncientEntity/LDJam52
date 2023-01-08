@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI tradeShipButtonText;
     public Image toggleRadial;
+    public Image[] drillRadials;
     [Space]
     public int stageMoney = 0;
     public int shipCostIncrement = 250;
