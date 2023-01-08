@@ -12,13 +12,13 @@ public class GreenTrade : MonoBehaviour
     int inc2 = 50;
 
     //Green range 50 - 250
-    float GreenCur = 100;
+    public float GreenCur = 100;
     float GreenTo = 100;
     float GreenFrom = 100;
     float GreenTime = 0;
 
     //purple range 75-175
-    float PurpleCur = 100;
+    public float PurpleCur = 100;
     float PurpleTo = 100;
     float PurpleFrom = 100;
     float PurpleTime = 0;

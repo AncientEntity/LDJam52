@@ -178,8 +178,15 @@ MonoBehaviour:
   actualBody: {fileID: 2522172503904021140}
   pivot: {fileID: 482082344681676398}
   sR: {fileID: 8495987096989868256}
+  activeProduction: 1
   resourcePurity: 1
   drillCount: 0
+  startingResources: 1500
+  currentResources: 1500
+  minedWaiting: 0
+  shipsCurrentlyHere: []
+  currentCores: 0
+  startingCores: 0
   isGasGiant: 1
   randomColor: 0
   possibleSprites:
@@ -210,6 +217,8 @@ MonoBehaviour:
     in its high pressure atmosphere. '
   - 'A gas giant that is home to a variety of strange and exotic life forms, adapted
     to its unique conditions.   '
+  minMaxOres: {x: 800, y: 1800}
+  minMaxCores: {x: 0, y: 0}
 --- !u!58 &-4136614892248072741
 CircleCollider2D:
   m_ObjectHideFlags: 0

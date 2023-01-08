@@ -50,8 +50,15 @@ MonoBehaviour:
   actualBody: {fileID: 1512728908691231416}
   pivot: {fileID: 3552908258212095554}
   sR: {fileID: 4762850357096716492}
+  activeProduction: 1
   resourcePurity: 1
   drillCount: 0
+  startingResources: 1000
+  currentResources: 1000
+  minedWaiting: 0
+  shipsCurrentlyHere: []
+  currentCores: 1
+  startingCores: 1
   isGasGiant: 0
   randomColor: 0
   possibleSprites:
@@ -87,6 +94,8 @@ MonoBehaviour:
     the presence of water and a protective atmosphere. '
   - 'A rocky planet with a diverse array of life forms, possibly due to its stable
     climate and abundant resources. '
+  minMaxOres: {x: 500, y: 1500}
+  minMaxCores: {x: 1, y: 3}
 --- !u!58 &8328746920471413549
 CircleCollider2D:
   m_ObjectHideFlags: 0

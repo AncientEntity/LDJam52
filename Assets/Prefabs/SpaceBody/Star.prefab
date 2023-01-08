@@ -101,6 +101,15 @@ MonoBehaviour:
   actualBody: {fileID: 840986761713095195}
   pivot: {fileID: 0}
   sR: {fileID: 840986761713095194}
+  activeProduction: 1
+  resourcePurity: 1
+  drillCount: 0
+  startingResources: 800
+  currentResources: 800
+  minedWaiting: 0
+  shipsCurrentlyHere: []
+  currentCores: 1
+  startingCores: 1
 --- !u!58 &-7823497741695207725
 CircleCollider2D:
   m_ObjectHideFlags: 0
