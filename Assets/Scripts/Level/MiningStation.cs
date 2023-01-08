@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MiningStation : PlayerBuild
 {
-    public override void DoMove(Vector2 position)
+    public override void DoMove(Vector2 position, bool overridePlanet)
     {
         throw new System.NotImplementedException();
     }

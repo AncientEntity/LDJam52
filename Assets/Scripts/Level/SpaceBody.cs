@@ -48,7 +48,7 @@ public abstract class SpaceBody : MonoBehaviour
         }
         if(activeProduction)
         {
-            float mineTick = Mathf.Clamp(resourcePurity * drillCount * Time.deltaTime, 0f, currentResources);
+            float mineTick = Mathf.Clamp(drillCount * (float)Drill.drill_mining * Time.deltaTime, 0f, currentResources);
             currentResources -= mineTick;
             minedWaiting += mineTick;
         }

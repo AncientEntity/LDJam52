@@ -11,6 +11,9 @@ public class DeliveryShip : PlayerBuild
     public ParticleSystem engineParticles;
     public SpaceBody targetPlanet;
     public Transform targetStation;
+    [Space]
+    public LineRenderer pathLine;
+    public LineRenderer targetLine;
 
     public TextMeshPro valueText;
 
@@ -28,7 +31,14 @@ public class DeliveryShip : PlayerBuild
     {
         if (canMove)
         {
+            pathLine.SetPosition(0, transform.position);
+            pathLine.SetPosition(1, targetPosition);
             DoMovement();
+        }
+        if(isSelected && targetPlanet != null && targetStation != null)
+        {
+            targetLine.SetPosition(0, targetPlanet.actualBody.position);
+            targetLine.SetPosition(1, targetStation.position);
         }
         StateHandler();
         if(!canMove && state == shipState.Retrieving && targetPlanet != null)
@@ -37,7 +47,7 @@ public class DeliveryShip : PlayerBuild
 
             transform.SetParent(targetPlanet.actualBody);
             //At planet to retrieve
-            if (targetPlanet.currentResources <= 0) { targetPlanet = null;transform.SetParent(null); }
+            if (targetPlanet.currentResources <= 0) { targetPlanet = null;transform.SetParent(null); return; }
             float oresTaken = Mathf.Clamp(1f,0f,targetPlanet.minedWaiting / targetPlanet.shipsCurrentlyHere.Count);
             targetPlanet.minedWaiting -= oresTaken;
             SetResources(resourceCount + oresTaken);
@@ -54,8 +64,9 @@ public class DeliveryShip : PlayerBuild
         {
             if(Vector2.Distance(targetStation.position,transform.position) >= 0.7f)
             {
-                canMove = true;
-                targetPosition = targetStation.position;
+                //canMove = true;
+                //targetPosition = targetStation.position;
+                DoMove(targetStation.position, false);
             } else
             {
                 float price = 0;
@@ -90,8 +101,9 @@ public class DeliveryShip : PlayerBuild
             else
             {
                 state = shipState.Retrieving;
-                targetPosition = targetPlanet.actualBody.position;
-                canMove = true;
+                DoMove(targetPlanet.actualBody.position,false);
+                //targetPosition = targetPlanet.actualBody.position;
+                //canMove = true;
             }
         }
 
@@ -103,6 +115,7 @@ public class DeliveryShip : PlayerBuild
         {
             engineParticles.Stop(false, ParticleSystemStopBehavior.StopEmitting);
             canMove = false;
+            pathLine.enabled = false;
         } else
         {
             //Look At Target
@@ -121,15 +134,25 @@ public class DeliveryShip : PlayerBuild
     
 
 
-    public override void DoMove(Vector2 position)
+    public override void DoMove(Vector2 position,bool overridePlanet=true)
     {
         canMove = true;
         targetPosition = position;
-        targetPlanet = null;
-        transform.SetParent(null);
+        if (overridePlanet)
+        {
+            targetPlanet = null;
+            transform.SetParent(null);
+        }
 
         engineParticles.Play();
+        pathLine.enabled = true;
 
+    }
+
+    public override void SetSelected(bool selected)
+    {
+        base.SetSelected(selected);
+        targetLine.enabled = selected;
     }
 
     public void SetResources(float v)
