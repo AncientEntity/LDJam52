@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI tradeShipButtonText;
     public Image toggleRadial;
     public Image[] drillRadials;
-    public int stageMoney { get { return (int)GameManager.money; }set{ GameManager.money = value;} }
+    public int stageMoney { get { return (int)GameManager.money; }set{ GameManager.money = value; } }
     public int shipCostIncrement = 250;
 
     private List<SpaceBody> solarBodies = new List<SpaceBody>();
@@ -34,13 +34,14 @@ public class LevelManager : MonoBehaviour
     private Vector2 lastMousePosition = Vector2.zero;
     private SpaceBody currentlyPressed = null;
 
-    private float timeLeft = 60 * 8;
+    private float timeLeft = 60 * 10;
     private int currentShipPrice = 250;
 
     private void Awake()
     {
         instance = this;
         drillsBought = 0;
+        Summery.starting_money = stageMoney;
     }
 
     private void Start()
@@ -88,6 +89,11 @@ public class LevelManager : MonoBehaviour
         timeLeft -= Time.deltaTime;
         timeLeftText.text = "Till Supernova: " + (timeLeft/60f).ToString("F2") +"yrs";
         moneyText.text = "Credits: $"+stageMoney;
+
+        if(timeLeft <= 0)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Summary");
+        }
     }
 
     private void CheckPlanetSelect()

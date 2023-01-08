@@ -6,7 +6,24 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public static long money = 1000000000;
+    public static int money
+    {
+        get
+        {
+            if(_money == -1)
+            {
+                _money = PlayerPrefs.GetInt("Money",500);
+            }
+            return _money;
+        }
+        set
+        {
+            PlayerPrefs.SetInt("Money", value);
+            PlayerPrefs.Save();
+            _money = value;
+        }
+    }
+    private static int _money = -1;
 
     //Item levels
     public static int drill_level = 1;
