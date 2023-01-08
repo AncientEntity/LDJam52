@@ -8,6 +8,9 @@ public class Planet : SpaceBody
     public bool randomColor = false;
     public Sprite[] possibleSprites;
     public string[] possibleDescriptions;
+    [Space]
+    public Vector2 minMaxOres;
+    public Vector2Int minMaxCores;
 
     private int spriteIndex = -1;
 
@@ -23,6 +26,13 @@ public class Planet : SpaceBody
         spriteIndex = Random.Range(0, possibleSprites.Length);
         sR.sprite = possibleSprites[spriteIndex];
         desc = possibleDescriptions[Random.Range(0, possibleDescriptions.Length)];
+
+        startingResources = Random.Range(minMaxOres.x, minMaxOres.y);
+        startingCores = Random.Range(minMaxCores.x, minMaxCores.y+1);
+        currentResources = startingResources;
+        currentCores = startingCores;
+
+
     }
 
     public override void OnHover()

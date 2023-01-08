@@ -13,10 +13,14 @@ public abstract class SpaceBody : MonoBehaviour
     public Transform pivot; //Pivot.
     public SpriteRenderer sR;
     [Space]
+    public bool activeProduction = true;
     public float resourcePurity = 1f;
     public int drillCount = 0;
     public float startingResources = 800;
     public float currentResources = 800;
+    public float minedWaiting = 0;
+    public List<DeliveryShip> shipsCurrentlyHere = new List<DeliveryShip>();
+
 
     public int currentCores = 1;
     public int startingCores = 1;
@@ -41,6 +45,12 @@ public abstract class SpaceBody : MonoBehaviour
         {
             float percentHarvested = currentResources / startingResources;
             sR.color = new Color(percentHarvested, percentHarvested, percentHarvested);
+        }
+        if(activeProduction)
+        {
+            float mineTick = Mathf.Clamp(resourcePurity * drillCount * Time.deltaTime, 0f, currentResources);
+            currentResources -= mineTick;
+            minedWaiting += mineTick;
         }
     }
 
@@ -81,6 +91,8 @@ public abstract class SpaceBody : MonoBehaviour
         LevelManager.instance.selectionRadial.segmentSubmenus[1].transform.GetChild(2).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = (int)currentResources + "/" + (int)startingResources + " Ores";
         LevelManager.instance.selectionRadial.segmentSubmenus[1].transform.GetChild(3).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = (int)currentCores + "/" + (int)startingCores + " Planet Cores";
 
+        ToggleColorSet();
+        
     }
 
 
@@ -88,5 +100,27 @@ public abstract class SpaceBody : MonoBehaviour
     {
         LevelManager.instance.selectionRadial.transform.position = new Vector3(0f, 9999999f, 0f);
         LevelManager.instance.selectionRadial.ForceClose();
+    }
+
+    public void OnRadialPressed(int index)
+    {
+        if(index == 8)
+        {
+            activeProduction = !activeProduction;
+            ToggleColorSet();
+        }
+    }
+
+    private void ToggleColorSet()
+    {
+        //Toggle Color
+        if (activeProduction)
+        {
+            LevelManager.instance.toggleRadial.color = new Color32(53, 164, 33, 116);
+        }
+        else
+        {
+            LevelManager.instance.toggleRadial.color = new Color32(164, 33, 42, 116);
+        }
     }
 }

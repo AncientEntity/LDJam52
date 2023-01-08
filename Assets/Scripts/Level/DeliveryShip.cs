@@ -10,7 +10,7 @@ public class DeliveryShip : PlayerBuild
 
     public ParticleSystem engineParticles;
     public SpaceBody targetPlanet;
-    public SpaceBody targetStation;
+    public Transform targetStation;
 
     public TextMeshPro valueText;
 
@@ -33,11 +33,13 @@ public class DeliveryShip : PlayerBuild
         StateHandler();
         if(!canMove && state == shipState.Retrieving && targetPlanet != null)
         {
+            if(!targetPlanet.shipsCurrentlyHere.Contains(this)) { targetPlanet.shipsCurrentlyHere.Add(this); }
+
             transform.SetParent(targetPlanet.actualBody);
             //At planet to retrieve
             if (targetPlanet.currentResources <= 0) { targetPlanet = null;transform.SetParent(null); }
-            float oresTaken = Mathf.Clamp(targetPlanet.resourcePurity * targetPlanet.drillCount * Time.deltaTime,0f,targetPlanet.currentResources);
-            targetPlanet.currentResources -= oresTaken;
+            float oresTaken = Mathf.Clamp(1f,0f,targetPlanet.minedWaiting / targetPlanet.shipsCurrentlyHere.Count);
+            targetPlanet.minedWaiting -= oresTaken;
             SetResources(resourceCount + oresTaken);
 
             if(resourceCount >= maxResources)
@@ -45,10 +47,30 @@ public class DeliveryShip : PlayerBuild
                 resourceCount = maxResources;
                 state = shipState.Selling;
                 transform.SetParent(null);
+                targetPlanet.shipsCurrentlyHere.Remove(this);
             }
-        } else if (!canMove && state == shipState.Selling && targetStation != null)
+        }
+        else if (!canMove && state == shipState.Selling && targetStation != null)
         {
+            if(Vector2.Distance(targetStation.position,transform.position) >= 0.7f)
+            {
+                canMove = true;
+                targetPosition = targetStation.position;
+            } else
+            {
+                float price = 0;
+                if(LevelManager.instance.tradeStations[0] == targetStation)
+                {
+                    price = FindObjectOfType<GreenTrade>().GreenCur;
+                } else
+                {
+                    price = FindObjectOfType<GreenTrade>().PurpleCur;
+                }
 
+                LevelManager.instance.stageMoney += (int)(resourceCount * price);
+                resourceCount = 0;
+                state = shipState.Idle;
+            }
         }
     }
 
