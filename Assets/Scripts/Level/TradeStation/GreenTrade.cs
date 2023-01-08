@@ -11,7 +11,7 @@ public class GreenTrade : MonoBehaviour
     int inc1 = 60;
     int inc2 = 50;
 
-    //Green range 50 - 250
+    //Green range
     public float GreenCur = 100;
     float GreenTo = 100;
     float GreenFrom = 100;
@@ -26,10 +26,10 @@ public class GreenTrade : MonoBehaviour
 
     void Start()
     {
-        GreenCur = Random.Range(10, 25);
+        GreenCur = Random.Range(70,85);
         GreenFrom = GreenCur;
         
-        PurpleCur = Random.Range(5, 30);
+        PurpleCur = Random.Range(80,125);
         PurpleFrom = PurpleCur;
 
         InvokeRepeating("Green_To_Update" , 5, inc1);
@@ -52,7 +52,7 @@ public class GreenTrade : MonoBehaviour
 
     void Green_To_Update(){
         GreenFrom = GreenCur;
-        GreenTo = Random.Range(10,25);
+        GreenTo = Random.Range(60,85);
         GreenTime = time; 
     }
 
@@ -65,7 +65,7 @@ public class GreenTrade : MonoBehaviour
 
     void Purple_To_Update(){
         PurpleFrom = PurpleCur;
-        PurpleTo = Random.Range(5,30);
+        PurpleTo = Random.Range(40,125);
         PurpleTime = time; 
     }
 
