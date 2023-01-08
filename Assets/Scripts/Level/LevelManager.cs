@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
     private Vector2 lastMousePosition = Vector2.zero;
     private SpaceBody currentlyPressed = null;
 
-    private float timeLeft = 60 * 10;
+    private float timeLeft = 60 * 5;
     private int currentShipPrice = 250;
 
     private void Awake()
