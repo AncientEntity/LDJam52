@@ -3891,7 +3891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &931487455
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6257,6 +6257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d290a100af8534c44812220003ddc8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Buy_Screen: {fileID: 1230036975}
+  Upgrade_Screen: {fileID: 552391327}
+  Sell_Screen: {fileID: 538346587}
 --- !u!114 &1404084661
 MonoBehaviour:
   m_ObjectHideFlags: 0

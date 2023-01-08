@@ -26,10 +26,10 @@ public class GreenTrade : MonoBehaviour
 
     void Start()
     {
-        GreenCur = Random.Range(10, 25);
+        GreenCur = Random.Range(70,85);
         GreenFrom = GreenCur;
         
-        PurpleCur = Random.Range(5, 30);
+        PurpleCur = Random.Range(80,125);
         PurpleFrom = PurpleCur;
 
         InvokeRepeating("Green_To_Update" , 5, inc1);
