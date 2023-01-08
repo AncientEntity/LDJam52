@@ -20,13 +20,14 @@ public class Money : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.money <= 10000){
-            MoneyText.text = "$" + GameManager.money.ToString();
-        }else if(GameManager.money <= 1000000){
-            MoneyText.text = "$" + (GameManager.money/1000).ToString() + "K";
-        }else{
-            MoneyText.text = "$" + (GameManager.money/10000000).ToString() + "Mil";
-        }
+        // if(GameManager.money <= 10000){
+        //     MoneyText.text = "$" + GameManager.money.ToString();
+        // }else if(GameManager.money <= 1000000){
+        //     MoneyText.text = "$" + (GameManager.money/1000).ToString() + "K";
+        // }else{
+        //     MoneyText.text = "$" + (GameManager.money/10000000).ToString() + "Mil";
+        // }
+        MoneyText.text = "$" + GameManager.money.ToString();
 
 
 

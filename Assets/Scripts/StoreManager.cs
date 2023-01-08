@@ -3,20 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StoreManager : MonoBehaviour
-{   
-    public int ship_speed_mod = 3;
-    public int ship_storage_mod = 3;
-    public int ship_harvest_mod = 3; 
-
-
-
+{  
 
 /************************************BUY**************************************/
 
     /***DRILL***/
     //buy drill kep is 1
     public void BuyDrill(){
-        if(GameManager.drill_level <= 10){
+        if(GameManager.drill_level < 10){
             bool buy = GameManager.instance.BuyDrill(Drill.cost, 1);
             if(buy){
                 Drill.update_costs(1);
@@ -27,7 +21,7 @@ public class StoreManager : MonoBehaviour
 
     //buy speed key is 2
     public void Buy_Drill_Speed(){
-        if(GameManager.drill_speed <= 10){
+        if(GameManager.drill_speed < 10){
             bool buy = GameManager.instance.BuyDrill(Drill.speed_cost, 2);
             if(buy){
                 Drill.update_costs(2);
@@ -38,7 +32,7 @@ public class StoreManager : MonoBehaviour
 
     //buy bit key is 3
     public void Buy_Drill_Bit(){
-        if(GameManager.drill_bit <= 5){
+        if(GameManager.drill_bit < 5){
             bool buy = GameManager.instance.BuyDrill(Drill.bit_cost, 3);
             if(buy){
                 Drill.update_costs(3);        
@@ -49,7 +43,7 @@ public class StoreManager : MonoBehaviour
 
     //buy eff key is 4
     public void Buy_Drill_Eff(){
-        if(GameManager.drill_eff <= 10){
+        if(GameManager.drill_eff < 10){
             bool buy = GameManager.instance.BuyDrill(Drill.eff_cost, 4);
             if(buy){
                 Drill.update_costs(4);    
@@ -57,35 +51,39 @@ public class StoreManager : MonoBehaviour
         }
     }
 
-
+    public void Buy_Exctractor(){
+        if(GameManager.ext_level == 0 && GameManager.drill_bit == 5){
+            GameManager.instance.BuyExt(Cores.ext_cost);
+        }
+    }
 
     /****SHIP****/
     //buy speed key is 1
     public void Buy_Ship_Speed(){
-        if(GameManager.ship_speed <= 10){      
+        if(GameManager.ship_speed < 10){      
             bool buy = GameManager.instance.BuyShip(Ship.speed_cost, 1);
             if(buy){
-                Ship.speed_cost = Ship.speed_cost * ship_speed_mod;
+                Ship.update_cost(1);
             }
         }
     }
 
     //buy harvest key is 2
     public void Buy_Ship_Harvest(){
-        if(GameManager.ship_harvest <= 10){
+        if(GameManager.ship_harvest < 10){
             bool buy = GameManager.instance.BuyShip(Ship.harvest_cost, 2);
             if(buy){
-                Ship.harvest_cost = Ship.harvest_cost * ship_harvest_mod;
+                Ship.update_cost(2);
             }
         }
     }
 
     //buy storage key is 3
     public void Buy_Ship_Storage(){
-        if(GameManager.ship_storage <= 10){
+        if(GameManager.ship_storage < 10){
             bool buy = GameManager.instance.BuyShip(Ship.storage_cost, 3);
             if(buy){
-                Ship.storage_cost = Ship.storage_cost * ship_storage_mod;   
+                Ship.update_cost(3);   
             }
         }
     }

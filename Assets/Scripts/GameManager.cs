@@ -6,23 +6,26 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public static long money = 100000000;
+    public static long money = 1000000000;
 
     //Item levels
-    public static int drill_level = 2;
-    public static int drill_speed = 2;
-    public static int drill_bit   = 2;
-    public static int drill_eff   = 2;
+    public static int drill_level = 1;
+    public static int drill_speed = 1;
+    public static int drill_bit   = 1;
+    public static int drill_eff   = 1;
     public static int drill_cost = 250;
 
     //Ship levels
-    public static int ship_speed = 2;
-    public static int ship_harvest = 2;
-    public static int ship_storage = 2;
+    public static int ship_speed = 1;
+    public static int ship_harvest = 1;
+    public static int ship_storage = 1;
+
+    //Extractor
+    public static int ext_level = 0;
 
     //Materials
     public static int iron = 100;
-    public static int planet_core = 3;
+    public static int planet_core = 5;
 
 
 
@@ -89,6 +92,12 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    public void BuyExt(int cost){
+        if(HasMoney(cost) == true){
+            AddMoney(-cost);
+            ext_level = 1;
+        }
+    }
 
 
 /**********************************Shop Selling*************************/
