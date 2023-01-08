@@ -6,19 +6,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public static long money = 10000000000;
+    public static long money = 100000000;
 
     //Item levels
     public static int drill_level = 2;
     public static int drill_speed = 2;
     public static int drill_bit   = 2;
     public static int drill_eff   = 2;
+    public static int drill_cost = 250;
 
-    //Ship shit
+    //Ship levels
     public static int ship_speed = 2;
     public static int ship_harvest = 2;
     public static int ship_storage = 2;
-
 
     //Materials
     public static int iron = 100;
@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
             switch(key){
                 case 1:
                     drill_level++;
+                    drill_cost += 125;
                     break;
                 case 2:
                     drill_speed++;

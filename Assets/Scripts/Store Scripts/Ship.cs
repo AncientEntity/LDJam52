@@ -67,7 +67,5 @@ public class Ship : MonoBehaviour
             Harvest_Buy.text = "MAX LEVEL";
             Harvest_Buy.color = Color.black;
         }
-        
-
     }
 }
