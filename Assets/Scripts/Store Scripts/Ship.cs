@@ -45,7 +45,7 @@ public class Ship : MonoBehaviour
     void Update()
     {
         if(GameManager.ship_storage < 10){
-            storage_amm = 50 + storage_inc * (GameManager.ship_storage - 1);
+            storage_amm =  storage_amm + (GameManager.ship_storage) + 1;
             Storage_lvl.text = (GameManager.ship_storage + 1).ToString();
             Storage_Buy.text = "$" + storage_cost.ToString();
             Storage_Power.text = storage_amm.ToString() + "T -> " + ((storage_amm + storage_inc).ToString()) + "T"; 
@@ -55,7 +55,7 @@ public class Ship : MonoBehaviour
                 Storage_Buy.color = Color.red;
             }
         }else{
-            storage_amm = 50 + storage_inc * (GameManager.ship_storage - 1);
+            storage_amm = 64;
             Storage_Power.text = storage_amm.ToString() + "T";
             Storage_Buy.text = "MAX LEVEL";
             Storage_Buy.color = Color.black;
