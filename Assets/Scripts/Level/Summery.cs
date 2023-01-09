@@ -26,7 +26,7 @@ public class Summery : MonoBehaviour
     void Update()
     {
         Money.text = "$" + (GameManager.money).ToString();
-        Spent.text = "$" + (money_made - starting_money).ToString();
+        Spent.text = "$" + ((GameManager.money + money_made - starting_money)).ToString();
         Made.text = "$" + money_made.ToString();
         Ore.text = ore_mined.ToString();
         Drills.text = drills_bought.ToString();

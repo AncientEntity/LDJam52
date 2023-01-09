@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
         }
     }
     private static int _drill_level = -1;
-
     public static int drill_speed
     {
         get
@@ -242,6 +241,7 @@ public class GameManager : MonoBehaviour
                     ship_harvest++;
                     break;
                 case 3:
+                    Ship.storage_amm = Ship.storage_amm + (GameManager.ship_storage) + 1;
                     ship_storage++;
                     break;
             }

@@ -29,10 +29,12 @@ public class DeliveryShip : PlayerBuild
     private void Start()
     {
         maxResources = Ship.storage_amm;
+        moveSpeed = (float) (0.03 * Ship.speed_power);
     }
 
     private void Update()
     {
+
         if (canMove)
         {
             pathLine.SetPosition(0, transform.position);

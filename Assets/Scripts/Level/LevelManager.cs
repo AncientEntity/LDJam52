@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
     private Vector2 lastMousePosition = Vector2.zero;
     private SpaceBody currentlyPressed = null;
 
-    private float timeLeft = 60 * 5;
+    private float timeLeft = 5;
     private int currentShipPrice = 250;
 
     private void Awake()
@@ -47,6 +47,9 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         Init();
+        if(stageMoney<500){
+            stageMoney = 500;
+        }
     }
 
     private void Init()
@@ -92,7 +95,7 @@ public class LevelManager : MonoBehaviour
 
         if(timeLeft <= 0)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Summary");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(5);
         }
     }
 

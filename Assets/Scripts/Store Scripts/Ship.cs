@@ -29,7 +29,6 @@ public class Ship : MonoBehaviour
     public static int harvest_power = 100;
 
     //Incrementations of each upgrade
-    int storage_inc = 2;
     int speed_inc = 35;
     int harvest_inc = 35;
 
@@ -45,10 +44,9 @@ public class Ship : MonoBehaviour
     void Update()
     {
         if(GameManager.ship_storage < 10){
-            storage_amm =  storage_amm + (GameManager.ship_storage) + 1;
             Storage_lvl.text = (GameManager.ship_storage + 1).ToString();
             Storage_Buy.text = "$" + storage_cost.ToString();
-            Storage_Power.text = storage_amm.ToString() + "T -> " + ((storage_amm + storage_inc).ToString()) + "T"; 
+            Storage_Power.text = storage_amm.ToString() + "T -> " + ((storage_amm + (GameManager.ship_storage) + 1).ToString()) + "T"; 
             if(GameManager.HasMoney(storage_cost) == true){
                 Storage_Buy.color = Color.green;
             }else{
