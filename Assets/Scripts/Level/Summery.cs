@@ -9,8 +9,6 @@ public class Summery : MonoBehaviour
     public Text Spent;
     public Text Made;
     public Text Ore;
-    //public Text Drills;
-    //public Text Ships;
 
 
 
@@ -31,13 +29,5 @@ public class Summery : MonoBehaviour
         Spent.text = "$" + (predicted_money - GameManager.money).ToString();
         Made.text = "$" + (GameManager.money - starting_money).ToString();
         Ore.text = (ore_mined).ToString();
-        
-
-
-        //Spent.text = "$" + ((GameManager.money + money_made - starting_money)).ToString();
-        // Made.text = "$" + (money_made - starting_money).ToString();
-        // Ore.text = ore_mined.ToString();
-        // Drills.text = drills_bought.ToString();
-        // Ships.text = ships_bought.ToString();
     }
 }
