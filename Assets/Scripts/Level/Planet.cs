@@ -27,7 +27,7 @@ public class Planet : SpaceBody
         sR.sprite = possibleSprites[spriteIndex];
         desc = possibleDescriptions[Random.Range(0, possibleDescriptions.Length)];
 
-        startingResources = Random.Range(minMaxOres.x, minMaxOres.y);
+        startingResources = Random.Range((minMaxOres.x * (GameManager.drill_level + 1)), minMaxOres.y * (GameManager.drill_level + 1));
         startingCores = Random.Range(minMaxCores.x, minMaxCores.y+1);
         currentResources = startingResources;
         currentCores = startingCores;

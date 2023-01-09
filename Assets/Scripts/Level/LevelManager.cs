@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 
     public static LevelManager instance = null;
     public static int drillsBought = 0;
+    public static int shipAmount = 0;
     [Space]
     public GameObject sunPrefab;
     public List<GameObject> bodyPrefabs = new List<GameObject>();
@@ -234,12 +235,17 @@ public class LevelManager : MonoBehaviour
 
     public void BuyTradeShip(GameObject tradeShip)
     {
-        if(stageMoney >= currentShipPrice)
+        if(stageMoney >= currentShipPrice && shipAmount < 8)
         {
+            shipAmount++;
             stageMoney -= currentShipPrice;
             Instantiate(tradeShip, bodyParent.position + new Vector3(Random.Range(-6f, 6f), Random.Range(-6f, 6f), 0f), Quaternion.identity);
             currentShipPrice += shipCostIncrement;
-            tradeShipButtonText.text = "Buy Trade Ship\n$" + currentShipPrice;
+            if(shipAmount == 8){
+                tradeShipButtonText.text = "Buy Trade Ship\nMax";
+            }else{               
+                tradeShipButtonText.text = "Buy Trade Ship\n$" + currentShipPrice;
+            }  
         }
     }
 }
