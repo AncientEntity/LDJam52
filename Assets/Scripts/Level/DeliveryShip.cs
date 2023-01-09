@@ -89,8 +89,8 @@ public class DeliveryShip : PlayerBuild
                 }
 
                 LevelManager.instance.stageMoney += (int)(resourceCount * price);
-                Summery.money_made =+ (int)(resourceCount * price);
-                Summery.ore_mined =+ (int)(resourceCount);
+                Summery.money_made += (int)(resourceCount * price);
+                Summery.ore_mined += (int)(resourceCount);
                 SetResources(0);
                 state = shipState.Idle;
             }
