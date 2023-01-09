@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
     private Vector2 lastMousePosition = Vector2.zero;
     private SpaceBody currentlyPressed = null;
 
-    private float timeLeft = 60 * 5; //It's in seconds. So 600. The compiler will simplify it to 600 but I like it as 60 * 5 lmao
+    private float timeLeft = 5 * 60; //It's in seconds. So 600. The compiler will simplify it to 600 but I like it as 60 * 5 lmao
     private int currentShipPrice = 250;
 
     private void Awake()
