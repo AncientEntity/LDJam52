@@ -28,7 +28,7 @@ public abstract class PlayerBuild : MonoBehaviour
     }
 
 
-    public abstract void DoMove(Vector2 position, bool overridePlanet);
+    public abstract void DoMove(Vector2 position, bool overridePlanet, Transform target = null);
     public virtual void SetSelected(bool selected)
     {
         isSelected = selected;

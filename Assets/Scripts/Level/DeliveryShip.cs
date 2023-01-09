@@ -76,7 +76,7 @@ public class DeliveryShip : PlayerBuild
             {
                 //canMove = true;
                 //targetPosition = targetStation.position;
-                DoMove(targetStation.position, false);
+                DoMove(targetStation.position, false,targetStation);
             } else
             {
                 float price = 0;
@@ -113,7 +113,7 @@ public class DeliveryShip : PlayerBuild
             else
             {
                 state = shipState.Retrieving;
-                DoMove(targetPlanet.actualBody.position,false);
+                DoMove(targetPlanet.actualBody.position,false,targetPlanet.actualBody);
                 //targetPosition = targetPlanet.actualBody.position;
                 //canMove = true;
             }
@@ -146,7 +146,7 @@ public class DeliveryShip : PlayerBuild
     
 
 
-    public override void DoMove(Vector2 position,bool overridePlanet=true)
+    public override void DoMove(Vector2 position,bool overridePlanet=true,Transform target=null)
     {
         canMove = true;
         targetPosition = position;
@@ -159,6 +159,21 @@ public class DeliveryShip : PlayerBuild
         engineParticles.Play();
         pathLine.enabled = true;
 
+        StartCoroutine(MaintainPosition(target));
+
+    }
+
+    private IEnumerator MaintainPosition(Transform target)
+    {
+        if(target == null) { yield break; }
+        while(canMove)
+        {
+            yield return new WaitForFixedUpdate();
+
+            targetPosition = target.position;
+
+
+        }
     }
 
     public override void SetSelected(bool selected)
