@@ -38,15 +38,15 @@ public class Drill : MonoBehaviour
     public static int eff_power = 100;
 
     //Incrementations for power values each lvl by %
-    int lvl_inc = 30;
-    int speed_inc = 45;
-    int bit_inc = 50;
-    int eff_inc = 15;
+    public static int lvl_inc = 30;
+    public static int speed_inc = 45;
+    public static int bit_inc = 50;
+    public static int eff_inc = 15;
 
-    double lvl_mod = 0.15;
-    double speed_mod = 0.2;
-    double bit_mod = 0.1;
-    double eff_mod = 0.1;
+    public static double lvl_mod = 0.15;
+    public static double speed_mod = 0.2;
+    public static double bit_mod = 0.1;
+    public static double eff_mod = 0.1;
 
 
     /*
@@ -142,6 +142,14 @@ public class Drill : MonoBehaviour
         //updating speed of drill
         drill_mining = ((GameManager.drill_level * lvl_power * lvl_mod) + (GameManager.drill_speed * speed_power * speed_mod) + (GameManager.drill_bit * bit_power * bit_mod) + (GameManager.drill_eff * eff_power * eff_mod))/500;
         Drill_Mining.text = drill_mining.ToString("F2") + "T/s";
+    }
+
+    public static void update_values(){
+        lvl_power = (100 + lvl_inc * (GameManager.drill_level - 1)); 
+        speed_power = 100 + speed_inc * (GameManager.drill_speed - 1); 
+        bit_power = 100 + bit_inc * (GameManager.drill_bit - 1);
+        eff_power = 100 + eff_inc * (GameManager.drill_eff - 1);
+        drill_mining = ((GameManager.drill_level * lvl_power * lvl_mod) + (GameManager.drill_speed * speed_power * speed_mod) + (GameManager.drill_bit * bit_power * bit_mod) + (GameManager.drill_eff * eff_power * eff_mod))/500;
     }
 
 

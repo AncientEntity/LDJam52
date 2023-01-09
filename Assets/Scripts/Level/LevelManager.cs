@@ -51,6 +51,9 @@ public class LevelManager : MonoBehaviour
         if(stageMoney<500){
             stageMoney = 500;
         }
+        shipAmount = 0;
+        Drill.update_values();
+        Ship.update_values();
     }
 
     private void Init()

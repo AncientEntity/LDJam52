@@ -29,8 +29,8 @@ public class Ship : MonoBehaviour
     public static int harvest_power = 100;
 
     //Incrementations of each upgrade
-    int speed_inc = 35;
-    int harvest_inc = 35;
+    public static int speed_inc = 35;
+    public static int harvest_inc = 35;
 
     /*
     storage Max 10: increases storage ammount of ships (max x500%)
@@ -92,6 +92,12 @@ public class Ship : MonoBehaviour
             Harvest_Buy.text = "MAX LEVEL";
             Harvest_Buy.color = Color.black;
         }
+    }
+
+    public static void update_values(){
+        storage_amm = GameManager.ship_storage;
+        speed_power = 100 + speed_inc * (GameManager.ship_speed - 1);
+        harvest_power = 100 + harvest_inc * (GameManager.ship_harvest - 1);
     }
 
     public static void update_cost(int key){
