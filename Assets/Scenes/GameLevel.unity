@@ -1119,17 +1119,17 @@ PrefabInstance:
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: segmentNames.Array.data[5]
-      value: Buy Drill 2 ($250)
+      value: Buy Drill 2 ($350)
       objectReference: {fileID: 0}
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: segmentNames.Array.data[6]
-      value: Buy Drill 3 ($250)
+      value: Buy Drill 3 ($450)
       objectReference: {fileID: 0}
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}
       propertyPath: segmentNames.Array.data[7]
-      value: Buy Drill 4 ($250)
+      value: Buy Drill 4 ($550)
       objectReference: {fileID: 0}
     - target: {fileID: 6649034327346200011, guid: b620543bdcef06f47aa345cd67b0b7c1,
         type: 3}

@@ -25,7 +25,7 @@ public abstract class SpaceBody : MonoBehaviour
         {
             LevelManager.drillsBought += 1;
             Summery.drills_bought = LevelManager.drillsBought;
-            _drillCount += value;
+            _drillCount = value;
         }
     }
     private int _drillCount = 0;
@@ -135,30 +135,30 @@ public abstract class SpaceBody : MonoBehaviour
                 ToggleColorSet();
                 break;
             case 5: // 1000 drill
-                if (drillCount != 1 || LevelManager.instance.stageMoney < 250)
+                if (drillCount != 1 || LevelManager.instance.stageMoney < 350)
                 {
                     return;
                 }
                 drillCount++;
-                LevelManager.instance.stageMoney -= 250;
+                LevelManager.instance.stageMoney -= 350;
                 ToggleColorSet();
                 break;
             case 6: // 2500 drill
-                if (drillCount != 2 || LevelManager.instance.stageMoney < 250)
+                if (drillCount != 2 || LevelManager.instance.stageMoney < 450)
                 {
                     return;
                 }
                 drillCount++;
-                LevelManager.instance.stageMoney -= 250;
+                LevelManager.instance.stageMoney -= 450;
                 ToggleColorSet();
                 break;
             case 7: // 5000 drill
-                if (drillCount != 3 || LevelManager.instance.stageMoney < 250)
+                if (drillCount != 3 || LevelManager.instance.stageMoney < 550)
                 {
                     return;
                 }
                 drillCount++;
-                LevelManager.instance.stageMoney -= 250;
+                LevelManager.instance.stageMoney -= 550;
                 ToggleColorSet();
                 break;
         }
@@ -180,6 +180,8 @@ public abstract class SpaceBody : MonoBehaviour
         {
             img.color = Color.red - new Color(0,0,0,0.5f);
         }
+
+
         if(drillCount >= 1)
         {
             LevelManager.instance.drillRadials[0].color = Color.green - new Color(0, 0, 0, 0.5f);
@@ -196,19 +198,25 @@ public abstract class SpaceBody : MonoBehaviour
         {
             LevelManager.instance.drillRadials[3].color = Color.green - new Color(0, 0, 0, 0.5f);
         }
+
+
+
         if (drillCount == 0 && LevelManager.instance.stageMoney >= 250)
         {
             LevelManager.instance.drillRadials[0].color = Color.yellow - new Color(0, 0, 0, 0.5f);
-        }
-        if (drillCount == 1 && LevelManager.instance.stageMoney >= 1000)
+        } 
+        else
+        if (drillCount == 1 && LevelManager.instance.stageMoney >= 350)
         {
             LevelManager.instance.drillRadials[1].color = Color.yellow - new Color(0, 0, 0, 0.5f);
         }
-        if (drillCount == 2 && LevelManager.instance.stageMoney >= 2500)
+        else
+        if (drillCount == 2 && LevelManager.instance.stageMoney >= 450)
         {
             LevelManager.instance.drillRadials[2].color = Color.yellow - new Color(0, 0, 0, 0.5f);
         }
-        if (drillCount == 3 && LevelManager.instance.stageMoney >= 5000)
+        else
+        if (drillCount == 3 && LevelManager.instance.stageMoney >= 550)
         {
             LevelManager.instance.drillRadials[3].color = Color.yellow - new Color(0, 0, 0, 0.5f);
         }
