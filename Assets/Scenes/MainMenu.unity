@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jeff Bezos goes to space
+  m_text: Ecliptic Industries
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 60085f287aa4b4d108c8b65d7b1cc1c0, type: 2}
   m_sharedMaterial: {fileID: 2494348308811935307, guid: 60085f287aa4b4d108c8b65d7b1cc1c0,
