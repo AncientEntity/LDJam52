@@ -7,5 +7,7 @@ Capitalism can no longer be escaped in space. Your goal is to buy up a solar sys
 
 We recommend a minimum of 10 minutes to try out the game, in that time you can complete roughly 2 stages. One of our team members spent several hours balancing the game and the awesomeness really starts to get awesome around there.
 
+![Animation](Ecliptic_Industries.gif)
+
 ## Playable Link
 https://ldjam.com/events/ludum-dare/52/ecliptic-industries
